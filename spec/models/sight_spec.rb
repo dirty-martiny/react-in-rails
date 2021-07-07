@@ -1,24 +1,5 @@
 require 'rails_helper'
 
-# create_table "sights", force: :cascade do |t|
-#   t.string "name"
-#   t.string "address1"
-#   t.string "city"
-#   t.string "zip_code"
-#   t.string "state"
-#   t.string "country"
-#   t.string "phone"
-#   t.integer "trip_id"
-
-        # name: "Taco Bell",
-        # address1: "Bell Street",
-        # city: "Taco",
-        # zip_code: "11111",
-        # state: "Jamaica Land",
-        # country: "Jamaica",
-        # phone: "222-222-2222",
-        # trip_id: trip1.id
-
 RSpec.describe Sight, type: :model do
   let(:user) { User.create email: 'kevin@testing.com', password: 'testing123', 
   password_confirmation: 'testing123'}
