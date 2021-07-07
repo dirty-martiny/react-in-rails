@@ -1,18 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TripIndex from "./pages/TripIndex";
+import TripShow from "./pages/TripShow";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       trips: [],
+      sights: [],
     };
   }
 
   componentDidMount() {
     this.indexTrips();
+    this.indexSights();
   }
 
   indexTrips = () => {
@@ -22,6 +25,19 @@ class App extends React.Component {
       })
       .then((payload) => {
         this.setState({ trips: payload });
+      })
+      .catch((errors) => {
+        console.log("index errors:", errors);
+      });
+  };
+
+  indexSights = () => {
+    fetch("/sights")
+      .then((response) => {
+        return response.json();
+      })
+      .then((payload) => {
+        this.setState({ sights: payload });
       })
       .catch((errors) => {
         console.log("index errors:", errors);
@@ -48,13 +64,31 @@ class App extends React.Component {
             <a href={sign_in_route}>Sign In</a>
           </div>
         )}
+
         <Router>
+          <div>
+            <Link to="/tripsindex">Trips</Link>
+          </div>
           <Switch>
             {/* <Route exact path="/" component={Home} /> */}
             {/* <Route path="/about" component={AboutUs} /> */}
+
+            <Route
+              path="/tripsindex"
+              render={(props) => {
+                return <TripIndex trips={this.state.trips} />;
+              }}
+            />
+            <Route
+              path="/trips/:id"
+              render={(props) => {
+                let id = +props.match.params.id;
+                let trip = this.state.trips.find((trip) => trip.id === id);
+                return <TripShow trip={trip} />;
+              }}
+            />
           </Switch>
         </Router>
-        <TripIndex trips={this.state.trips} />
       </React.Fragment>
     );
   }
