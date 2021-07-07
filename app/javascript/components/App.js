@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TripIndex from "./pages/TripIndex";
 import TripShow from "./pages/TripShow";
+import SightNew from "./pages/SightNew";
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +43,18 @@ class App extends React.Component {
       .catch((errors) => {
         console.log("index errors:", errors);
       });
+  };
+  createSight = (newsight) => {
+    fetch("/sights", {
+      body: JSON.stringify(newsight),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.readSights())
+      .catch((errors) => console.log("Sight create fetch errors:", errors));
   };
 
   render() {
@@ -85,6 +98,13 @@ class App extends React.Component {
                 let id = +props.match.params.id;
                 let trip = this.state.trips.find((trip) => trip.id === id);
                 return <TripShow trip={trip} />;
+              }}
+            />
+            <Route
+              path="/sightnew"
+              render={(props) => {
+                let trip = this.state.trips.filter((trip) => trip.id === id);
+                return <SightNew createSight={this.createSight} trip={trip} />;
               }}
             />
           </Switch>
