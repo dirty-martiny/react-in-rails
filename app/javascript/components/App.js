@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import TripIndex from "./pages/TripIndex";
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <a href={sign_in_route}>Sign In</a>
           </div>
         )}
+        <TripIndex />
       </React.Fragment>
     );
   }
