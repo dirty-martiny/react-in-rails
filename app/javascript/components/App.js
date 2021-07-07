@@ -29,6 +29,19 @@ class App extends React.Component {
       });
   };
 
+  createSight = (newsight) => {
+    fetch("/sights", {
+      body: JSON.stringify(newsight),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => this.readSights())
+    .catch(errors => console.log("Sight create fetch errors:", errors))
+  }
+
   render() {
     const {
       logged_in,
@@ -53,6 +66,7 @@ class App extends React.Component {
           <Switch>
             {/* <Route exact path="/" component={Home} /> */}
             {/* <Route path="/about" component={AboutUs} /> */}
+            <Route path="/sightnew" render={(props) => <SightNew createSight={this.createSight} user={current_user}/> } />
           </Switch>
         </Router>
         <TripIndex trips={this.state.trips} />
