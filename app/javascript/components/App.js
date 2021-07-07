@@ -66,7 +66,10 @@ class App extends React.Component {
           <Switch>
             {/* <Route exact path="/" component={Home} /> */}
             {/* <Route path="/about" component={AboutUs} /> */}
-            <Route path="/sightnew" render={(props) => <SightNew createSight={this.createSight} user={current_user}/> } />
+            <Route path="/sightnew" render={(props) => {
+              let trip = this.state.trips.filter(trip => trip.id === )
+            <SightNew createSight={this.createSight} trip_id={}/> } 
+          }/>
           </Switch>
         </Router>
         <TripIndex trips={this.state.trips} />
