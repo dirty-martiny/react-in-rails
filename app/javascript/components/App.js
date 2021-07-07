@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TripIndex from "./pages/TripIndex";
+import SightNew from "./pages/SightNew"
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component {
           </div>
         )}
         <TripIndex />
+        <SightNew/>
       </React.Fragment>
     );
   }
