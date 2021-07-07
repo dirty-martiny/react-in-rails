@@ -1,4 +1,8 @@
 class TripsController < ApplicationController
+    def index 
+        trips = Trip.all
+        render json: trips
+    end
      def create
         trip = Trip.create(trip_params)
         if trip.valid?
