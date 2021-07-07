@@ -1,8 +1,33 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import TripIndex from "./pages/TripIndex";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      trips: [],
+    };
+  }
+
+  componentDidMount() {
+    this.indexTrips();
+  }
+
+  indexTrips = () => {
+    fetch("/trips")
+      .then((response) => {
+        return response.json();
+      })
+      .then((payload) => {
+        this.setState({ trips: payload });
+      })
+      .catch((errors) => {
+        console.log("index errors:", errors);
+      });
+  };
+
   render() {
     const {
       logged_in,
@@ -23,7 +48,13 @@ class App extends React.Component {
             <a href={sign_in_route}>Sign In</a>
           </div>
         )}
-        <TripIndex />
+        <Router>
+          <Switch>
+            {/* <Route exact path="/" component={Home} /> */}
+            {/* <Route path="/about" component={AboutUs} /> */}
+          </Switch>
+        </Router>
+        <TripIndex trips={this.state.trips} />
       </React.Fragment>
     );
   }
