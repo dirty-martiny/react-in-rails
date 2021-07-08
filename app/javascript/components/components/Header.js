@@ -7,16 +7,19 @@ export default class Header extends Component {
     return (
       <div>
         <h2>Header</h2>
+        <div>
+          <Link to="/tripsindex">Trips</Link>
+        </div>
         {logged_in && (
           <div>
             <a href={sign_out_route}>Sign Out</a>
-            <Link href="/about">About Us</Link>
+            <Link to="/about">About Us</Link>
           </div>
         )}
         {!logged_in && (
           <div>
             <a href={sign_in_route}>Sign In</a>
-            <Link href="/about">About Us</Link>
+            <Link to="/about">About Us</Link>
           </div>
         )}
       </div>

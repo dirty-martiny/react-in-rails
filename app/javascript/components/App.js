@@ -79,16 +79,13 @@ class App extends React.Component {
     } = this.props;
     return (
       <React.Fragment>
-        <Header
-          new_user_route={new_user_route}
-          sign_in_route={sign_in_route}
-          sign_out_route={sign_out_route}
-        />
-
         <Router>
-          <div>
-            <Link to="/tripsindex">Trips</Link>
-          </div>
+          <Header
+            new_user_route={new_user_route}
+            sign_in_route={sign_in_route}
+            sign_out_route={sign_out_route}
+          />
+
           <Switch>
             {!logged_in && <Route exact path="/" component={LandingPage} />}
             {logged_in && <Route exact path="/" component={Dash} />}
