@@ -10,13 +10,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       trips: [],
-      sights: [],
     };
   }
 
   componentDidMount() {
     this.indexTrips();
-    this.indexSights();
   }
 
   indexTrips = () => {
@@ -32,18 +30,6 @@ class App extends React.Component {
       });
   };
 
-  indexSights = () => {
-    fetch("/sights")
-      .then((response) => {
-        return response.json();
-      })
-      .then((payload) => {
-        this.setState({ sights: payload });
-      })
-      .catch((errors) => {
-        console.log("index errors:", errors);
-      });
-  };
   createSight = (newsight) => {
     fetch("/sights", {
       body: JSON.stringify(newsight),
@@ -53,7 +39,7 @@ class App extends React.Component {
       method: "POST",
     })
       .then((response) => response.json())
-      .then((payload) => this.readSights())
+      .then((payload) => this.indexTrips())
       .catch((errors) => console.log("Sight create fetch errors:", errors));
   };
 
@@ -97,13 +83,14 @@ class App extends React.Component {
               render={(props) => {
                 let id = +props.match.params.id;
                 let trip = this.state.trips.find((trip) => trip.id === id);
-                return <TripShow trip={trip} />;
+                return <TripShow trip={trip} sights={this.state.sights} />;
               }}
             />
             <Route
-              path="/sightnew"
+              path="/sightnew/:id"
               render={(props) => {
-                let trip = this.state.trips.filter((trip) => trip.id === id);
+                let id = +props.match.params.id;
+                let trip = this.state.trips.find((trip) => trip.id === id);
                 return <SightNew createSight={this.createSight} trip={trip} />;
               }}
             />
