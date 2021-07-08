@@ -3,22 +3,28 @@ class TripsController < ApplicationController
   # user is NOT logged in
     # remove/filter out private trips
     #  user_signed_in? -> from devise
+    # current_user
   # user IS logged in
     # Dash
       # only public
     # your trips
       # specific current user's publics and privates
-    def index 
-        trips = Trip.all
-        render :json => trips.to_json(include: :sights)
-    end
     # def index 
     #     trips = Trip.all
-    #     if user_signed_in? and current_user
-    #       render :json => trips.to_json(include: :sights)
-    #     end
     #     render :json => trips.to_json(include: :sights)
     # end
+
+
+
+    def index 
+        trips = Trip.all
+        if user_signed_in?
+          filtered_trips = trips.where("user_id = #{current_user.id} or is_public = 'True'")
+          render :json => filtered_trips.to_json(include: :sights)
+        end
+
+        render :json => trips.to_json(include: :sights)
+    end
     
     def create
         trip = Trip.create(trip_params)
