@@ -90,6 +90,27 @@ class App extends React.Component {
       });
   };
 
+  deleteSight = (sightid) => {
+    fetch(`/sights/${sightid}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexTrips();
+      })
+      .catch((errors) => {
+        console.log("delete errors:", errors);
+      });
+  };
+
   render() {
     const {
       logged_in,
@@ -129,6 +150,7 @@ class App extends React.Component {
                     sights={this.state.sights}
                     logged_in={logged_in}
                     deleteTrip={this.deleteTrip}
+                    deleteSight={this.deleteSight}
                   />
                 );
               }}

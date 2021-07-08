@@ -154,4 +154,29 @@ RSpec.describe "Sights", type: :request do
         expect(response).to have_http_status(422)
       end
     end
+
+    # delete sight
+    describe 'DELETE /sight' do
+    it 'deletes a sight' do
+      sight_params = {
+          sight: {
+            name: "Taco Bell",
+            address1: "Bell Street",
+            city: "Taco",
+            zip_code: "11111",
+            state: "Jamaica Land",
+            country: "Jamaica",
+            phone: "222-222-2222",
+            trip_id: trip1.id
+          }
+        }
+      post '/sights', params: sight_params
+      sight = Sight.first
+      delete "/sights/#{sight.id}"
+      sights = Sight.all
+
+      expect(sights).to be_empty
+      expect(response).to have_http_status(200)
+    end
+  end
 end

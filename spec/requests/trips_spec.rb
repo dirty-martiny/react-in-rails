@@ -43,4 +43,26 @@ RSpec.describe "Trips", type: :request do
       expect(trip_response['is_public']).to eq false
     end
   end
+
+  # delete trip
+    describe 'DELETE /trips' do
+    it 'deletes a trip' do
+      trip_params = {
+        trip: {
+        trip_name: "I like the cold",
+        trip_location: "Boston",
+        trip_date_range: "12/1/2021 - 1/1/2022",
+        is_public: false,
+        user_id: user.id
+      }
+    }
+      post '/trips', params: trip_params
+      trip = Trip.first
+      delete "/trips/#{trip.id}"
+      trips = Trip.all
+
+      expect(trips).to be_empty
+      expect(response).to have_http_status(200)
+    end
+  end
 end

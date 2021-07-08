@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 
 export default class TripShow extends Component {
-  handleDelete = () => {
+  handleTripDelete = () => {
     this.props.deleteTrip(this.props.trip.id);
   };
   render() {
@@ -31,7 +31,11 @@ export default class TripShow extends Component {
                     {logged_in && (
                       <div>
                         <Link to={`/editsight/${sight.id}`}>Edit Sight</Link>
-                        <Button>Delete Sight</Button>
+                        <Button
+                          onClick={() => this.props.deleteSight(sight.id)}
+                        >
+                          Delete Sight
+                        </Button>
                       </div>
                     )}
                   </div>
@@ -44,7 +48,7 @@ export default class TripShow extends Component {
               <div>
                 <Link to={`/edittrip/${trip.id}`}>Edit Trip</Link>
                 <Link to="/tripsindex">
-                  <Button onClick={this.handleDelete}>Delete Trip</Button>
+                  <Button onClick={this.handleTripDelete}>Delete Trip</Button>
                 </Link>
                 <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
               </div>
