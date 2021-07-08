@@ -7,9 +7,11 @@ import TripNew from "./pages/TripNew";
 import TripEdit from "./pages/TripEdit"
 import AboutUs from "./pages/AboutUs";
 import NotFound from './pages/NotFound'
+import Footer from './components/Footer'
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -152,7 +154,7 @@ class App extends React.Component {
             sign_in_route={sign_in_route}
             sign_out_route={sign_out_route}
           />
-
+          <div className='main-container'>
           <Switch>
             {!logged_in && <Route exact path="/" component={LandingPage} />}
             {logged_in && <Route exact path="/" component={Dash} />}
@@ -203,6 +205,8 @@ class App extends React.Component {
           }} />
           <Route component={ NotFound }/>
           </Switch>
+          </div>
+          <Footer/>
         </Router>
       </React.Fragment>
     );

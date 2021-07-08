@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.footer-main {
+    h3{
+        margin-top: 2rem;
+        background-color:rgb(230, 190, 190);
+    }
+    .footer-link{
+        display:flex;
+        justify-content: flex-end;
+        color:rgb(251, 254, 251);
+        background-color: rgb(230, 190, 190) ;
+        text-decoration: none;
+    }
+}
