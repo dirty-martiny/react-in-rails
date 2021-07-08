@@ -65,4 +65,34 @@ RSpec.describe "Trips", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+     #-----Update-----
+     describe 'PUT /trips' do
+      it 'edits a trip' do
+        trip = Trip.create(
+          trip_name: "Road trip",
+          trip_location: "Jamaica",
+          trip_date_range: "12/20/2021 - 1/5/2022",
+          is_public: false,
+          user_id: user.id
+        )
+        
+        update_trip_params = {
+          trip: {
+            trip_name: "Road Trip",
+            trip_location: "San Diego",
+            trip_date_range: "12/20/2021 - 1/5/2022",
+            is_public: false,
+            user_id: user.id
+          }
+        }
+        trip= Trip.first
+        patch "/trips/#{trip.id}", params: update_trip_params
+
+        updated_trip_response = JSON.parse(response.body)
+        expect(updated_trip_response['trip_name']).to eq "Road Trip"
+        expect(updated_trip_response['trip_location']).to eq "San Diego"
+        expect(updated_trip_response['trip_date_range']).to eq "12/20/2021 - 1/5/2022"
+        expect(response).to have_http_status(200)
+      end
+    end
 end
