@@ -33,6 +33,9 @@ export default class TripShow extends Component {
             <div>
               <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
             </div>
+            <div>
+              <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
+            </div>
           </div>
         )}
       </div>

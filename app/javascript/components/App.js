@@ -4,6 +4,7 @@ import TripIndex from "./pages/TripIndex";
 import TripShow from "./pages/TripShow";
 import SightNew from "./pages/SightNew";
 import TripNew from "./pages/TripNew";
+import TripEdit from "./pages/TripEdit"
 import AboutUs from "./pages/AboutUs";
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
@@ -69,6 +70,29 @@ class App extends React.Component {
       });
   };
 
+  editTrip = (trip, id) => {
+    fetch(`/trips/${id}`, {
+      body: JSON.stringify(trip),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      console.log(response)
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => {
+      this.indexTrips()
+    })
+    .catch(errors => {
+      console.log("edit errors:", errors)
+    })
+  }
+
   render() {
     const {
       logged_in,
@@ -121,6 +145,11 @@ class App extends React.Component {
                 />
               )}
             />
+            <Route path={"/tripedit/:id"} render={ (props) => {
+            let id =props.match.params.id
+            let trip = this.state.trips.find(trip => trip.id === +id)
+            return <TripEdit editTrip={ this.editTrip } trip={ trip } user={current_user}/>
+          }} />
           </Switch>
         </Router>
       </React.Fragment>
