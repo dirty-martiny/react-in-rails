@@ -116,7 +116,7 @@ export class SightNew extends Component {
             Add To Trip
           </Button>
         </Form>
-        {/* {this.state.submitted && <Redirect to = "/tripshow/id" />} */}
+        {this.state.submitted && <Redirect to = {`/trips/${this.props.trip.id}`}/>}
       </div>
     );
   }

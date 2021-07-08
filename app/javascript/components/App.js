@@ -5,7 +5,9 @@ import TripShow from "./pages/TripShow";
 import SightNew from "./pages/SightNew";
 import SightEdit from "./pages/SightEdit";
 import TripNew from "./pages/TripNew";
+import TripEdit from "./pages/TripEdit"
 import AboutUs from "./pages/AboutUs";
+import NotFound from './pages/NotFound'
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
@@ -88,13 +90,76 @@ class App extends React.Component {
         return response.json();
       })
       .then(() => {
-        this.indexApartment();
+        this.indexTrips();
       })
       .catch((errors) => {
         console.log("create errors:", errors);
       });
   };
 
+  deleteTrip = (tripid) => {
+    fetch(`/trips/${tripid}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexTrips();
+      })
+      .catch((errors) => {
+        console.log("delete errors:", errors);
+      });
+  };
+
+  deleteSight = (sightid) => {
+    fetch(`/sights/${sightid}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexTrips();
+      })
+      .catch((errors) => {
+        console.log("delete errors:", errors);
+      });
+  };
+  editTrip = (trip, id) => {
+    fetch(`/trips/${id}`, {
+      body: JSON.stringify(trip),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      console.log(response)
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => {
+      this.indexTrips()
+    })
+    .catch(errors => {
+      console.log("edit errors:", errors)
+    })
+  }
 
   render() {
     const {
@@ -108,6 +173,7 @@ class App extends React.Component {
       <React.Fragment>
         <Router>
           <Header
+            logged_in={logged_in}
             new_user_route={new_user_route}
             sign_in_route={sign_in_route}
             sign_out_route={sign_out_route}
@@ -143,7 +209,15 @@ class App extends React.Component {
               render={(props) => {
                 let id = +props.match.params.id;
                 let trip = this.state.trips.find((trip) => trip.id === id);
-                return <TripShow trip={trip} sights={this.state.sights} />;
+                return (
+                  <TripShow
+                    trip={trip}
+                    sights={this.state.sights}
+                    logged_in={logged_in}
+                    deleteTrip={this.deleteTrip}
+                    deleteSight={this.deleteSight}
+                  />
+                );
               }}
             />
             <Route
@@ -163,8 +237,12 @@ class App extends React.Component {
                 />
               )}
             />
-            
-          
+            <Route path={"/tripedit/:id"} render={ (props) => {
+            let id =props.match.params.id
+            let trip = this.state.trips.find(trip => trip.id === +id)
+            return <TripEdit editTrip={ this.editTrip } trip={ trip } user={current_user}/>
+          }} />
+          <Route component={ NotFound }/>
           </Switch>
         </Router>
       </React.Fragment>
