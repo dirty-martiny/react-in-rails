@@ -24,6 +24,7 @@ export default class TripShow extends Component {
                     <p>{sight.state}</p>
                     <p>{sight.country}</p>
                     <p>{sight.phone}</p>
+                    <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>Edit sight</Link>
                   </div>
                 );
               })}

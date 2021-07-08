@@ -83,7 +83,7 @@ export default class TripNew extends Component {
                 </Form>
               </div>
             </div>
-            {/* {this.state.submitted && <Redirect to="/mytrip" />} */}
+            {this.state.submitted && <Redirect to="/tripsindex" />}
           </div>
         );
     }

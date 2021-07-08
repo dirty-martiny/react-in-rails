@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import TripIndex from "./pages/TripIndex";
 import TripShow from "./pages/TripShow";
 import SightNew from "./pages/SightNew";
+import SightEdit from "./pages/SightEdit";
 import TripNew from "./pages/TripNew";
 import AboutUs from "./pages/AboutUs";
 import Dash from "./components/Dash";
@@ -46,6 +47,31 @@ class App extends React.Component {
       .then((payload) => this.indexTrips())
       .catch((errors) => console.log("Sight create fetch errors:", errors));
   };
+ 
+    editSight = (sight, id) => {
+    fetch(`/sights/${id}`, {
+      body: JSON.stringify(sight),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      console.log(response)
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => {
+      this.indexTrips()
+    })
+    .catch(errors => {
+      console.log("edit errors:", errors)
+    })
+  } 
+
+
 
   createNewTrip = (newTrip) => {
     fetch("/trips", {
@@ -68,6 +94,7 @@ class App extends React.Component {
         console.log("create errors:", errors);
       });
   };
+
 
   render() {
     const {
@@ -97,6 +124,21 @@ class App extends React.Component {
               }}
             />
             <Route
+              path="/trips/:tripId/sight-edit/:sightId"
+              render={ (props) => {
+                const trip = this.state.trips.find(trip => trip.id === +props.match.params.tripId)
+
+                let sight = trip.sights.find(sight => sight.id === +props.match.params.sightId)
+                return (
+                  <SightEdit
+                    editSight={ this.editSight }
+                    current_user={ current_user }
+                    sight={ sight }
+                  />
+                )
+              }}
+            />
+            <Route
               path="/trips/:id"
               render={(props) => {
                 let id = +props.match.params.id;
@@ -121,6 +163,8 @@ class App extends React.Component {
                 />
               )}
             />
+            
+          
           </Switch>
         </Router>
       </React.Fragment>
