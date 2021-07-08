@@ -1,7 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import TripIndex from "./pages/TripIndex";
+import TripShow from "./pages/TripShow";
+import SightNew from "./pages/SightNew";
+import TripNew from "./pages/TripNew";
+import AboutUs from "./pages/AboutUs";
+import Dash from "./components/Dash";
+import LandingPage from "./components/LandingPage";
+import Header from "./components/Header";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,6 +34,41 @@ class App extends React.Component {
       });
   };
 
+  createSight = (newsight) => {
+    fetch("/sights", {
+      body: JSON.stringify(newsight),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.indexTrips())
+      .catch((errors) => console.log("Sight create fetch errors:", errors));
+  };
+
+  createNewTrip = (newTrip) => {
+    fetch("/trips", {
+      body: JSON.stringify(newTrip),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexApartment();
+      })
+      .catch((errors) => {
+        console.log("create errors:", errors);
+      });
+  };
+
   render() {
     const {
       logged_in,
@@ -38,23 +79,53 @@ class App extends React.Component {
     } = this.props;
     return (
       <React.Fragment>
-        {logged_in && (
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        )}
-        {!logged_in && (
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        )}
+        <Header
+          new_user_route={new_user_route}
+          sign_in_route={sign_in_route}
+          sign_out_route={sign_out_route}
+        />
+
         <Router>
+          <div>
+            <Link to="/tripsindex">Trips</Link>
+          </div>
           <Switch>
-            {/* <Route exact path="/" component={Home} /> */}
-            {/* <Route path="/about" component={AboutUs} /> */}
+            {!logged_in && <Route exact path="/" component={LandingPage} />}
+            {logged_in && <Route exact path="/" component={Dash} />}
+            <Route path="/about" component={AboutUs} />
+            <Route
+              path="/tripsindex"
+              render={(props) => {
+                return <TripIndex trips={this.state.trips} />;
+              }}
+            />
+            <Route
+              path="/trips/:id"
+              render={(props) => {
+                let id = +props.match.params.id;
+                let trip = this.state.trips.find((trip) => trip.id === id);
+                return <TripShow trip={trip} sights={this.state.sights} />;
+              }}
+            />
+            <Route
+              path="/sightnew/:id"
+              render={(props) => {
+                let id = +props.match.params.id;
+                let trip = this.state.trips.find((trip) => trip.id === id);
+                return <SightNew createSight={this.createSight} trip={trip} />;
+              }}
+            />
+            <Route
+              path="/newtrip"
+              render={(props) => (
+                <TripNew
+                  createNewTrip={this.createNewTrip}
+                  current_user={current_user}
+                />
+              )}
+            />
           </Switch>
         </Router>
-        <TripIndex trips={this.state.trips} />
       </React.Fragment>
     );
   }

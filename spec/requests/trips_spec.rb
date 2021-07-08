@@ -23,7 +23,24 @@ RSpec.describe "Trips", type: :request do
       expect(trip['is_public']).to eq false
     end
   end
-# -----create-----
-# -----update-----
-# -----delete-----
+  # -----create-----
+  describe "POST /trips" do
+    it 'creates a new trip' do
+      trip_params = {
+        trip: {
+        trip_name: "I like the cold",
+        trip_location: "Boston",
+        trip_date_range: "12/1/2021 - 1/1/2022",
+        is_public: false,
+        user_id: user.id
+        }
+      }
+      post '/trips', params: trip_params
+      trip_response = JSON.parse(response.body)
+     expect(trip_response['trip_name']).to eq 'I like the cold'
+      expect(trip_response['trip_location']).to eq 'Boston'
+      expect(trip_response['trip_date_range']).to eq '12/1/2021 - 1/1/2022'
+      expect(trip_response['is_public']).to eq false
+    end
+  end
 end
