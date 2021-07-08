@@ -113,10 +113,12 @@ export class SightEdit extends Component {
             name="submit"
             onClick={this.handleSubmit}
           >
-            Add To Trip
+            Edit Sight
           </Button>
         </Form>
-        {/* {this.state.submitted && <Redirect to = "/tripshow/id" />} */}
+        {this.state.submitted && (
+          <Redirect to={`/trips/${this.props.trip && this.props.trip.id}`} />
+        )}
       </div>
     );
   }
