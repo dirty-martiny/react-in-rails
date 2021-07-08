@@ -6,6 +6,7 @@ import SightNew from "./pages/SightNew";
 import TripNew from "./pages/TripNew";
 import TripEdit from "./pages/TripEdit"
 import AboutUs from "./pages/AboutUs";
+import NotFound from './pages/NotFound'
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
@@ -200,6 +201,7 @@ class App extends React.Component {
             let trip = this.state.trips.find(trip => trip.id === +id)
             return <TripEdit editTrip={ this.editTrip } trip={ trip } user={current_user}/>
           }} />
+          <Route component={ NotFound }/>
           </Switch>
         </Router>
       </React.Fragment>
