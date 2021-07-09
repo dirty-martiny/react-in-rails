@@ -225,7 +225,6 @@ class App extends React.Component {
                   return (
                     <TripShow
                       trip={trip}
-                      sights={this.state.sights}
                       logged_in={logged_in}
                       deleteTrip={this.deleteTrip}
                       deleteSight={this.deleteSight}
