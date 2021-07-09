@@ -34,7 +34,7 @@ export class SightEdit extends Component {
   render() {
     return (
       <div>
-        <h1>Sight New Page</h1>
+        <h1>Sight Edit Page</h1>
         <Form>
           <FormGroup>
             <Label for="name">Sight's Name</Label>
