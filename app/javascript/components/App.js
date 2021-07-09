@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
+import YourTrips from "./pages/YourTrips";
 
 class App extends React.Component {
   constructor(props) {
@@ -179,7 +180,17 @@ class App extends React.Component {
           <div className="main-container">
             <Switch>
               {!logged_in && <Route exact path="/" component={LandingPage} />}
-              {logged_in && <Route exact path="/" component={Dash} />}
+              {logged_in && (
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => {
+                    return (
+                      <Dash trips={this.state.trips} user={current_user} />
+                    );
+                  }}
+                />
+              )}
               <Route path="/about" component={AboutUs} />
               <Route
                 path="/tripsindex"
@@ -218,6 +229,7 @@ class App extends React.Component {
                       logged_in={logged_in}
                       deleteTrip={this.deleteTrip}
                       deleteSight={this.deleteSight}
+                      user={current_user}
                     />
                   );
                 }}
@@ -252,6 +264,14 @@ class App extends React.Component {
                       trip={trip}
                       user={current_user}
                     />
+                  );
+                }}
+              />
+              <Route
+                path="/yourtrips"
+                render={(props) => {
+                  return (
+                    <YourTrips trips={this.state.trips} user={current_user} />
                   );
                 }}
               />
