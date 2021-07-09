@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create email: "test@test.com", password: "123123", password_confirmation: "123123"
+user2 = User.create email: "email@email.com", password: "123123", password_confirmation: "123123"
 
 # trips
 # t.string "trip_name"
@@ -28,6 +29,20 @@ trips =[
         trip_date_range: "2/15/2022 - 2/20/2022",
         is_public: true,
         user_id: user.id
+    },
+    {
+        trip_name: "Pasta Land",
+        trip_location: "Italy",
+        trip_date_range: "6/10/2022 - 6/20/2022",
+        is_public: true,
+        user_id: user2.id
+    },
+    {
+        trip_name: "A lot eating",
+        trip_location: "Italy",
+        trip_date_range: "2/15/2022 - 2/20/2022",
+        is_public: false,
+        user_id: user2.id
     }
 ]
 
@@ -37,6 +52,8 @@ trips.each do |attributes|
 end
 
 trip1 = Trip.first
+trip2 = Trip.third
+
 
 # sights
 # t.string "name"
@@ -68,6 +85,26 @@ sights = [
         country: "Jamaica",
         phone: "333-333-3333",
         trip_id: trip1.id
+    },
+    {
+        name: "Taco Bell",
+        address1: "Bell Street",
+        city: "Taco",
+        zip_code: "11111",
+        state: "Jamaica Land",
+        country: "Jamaica",
+        phone: "222-222-2222",
+        trip_id: trip2.id
+    },
+    {
+        name: "Eating Great",
+        address1: "Eating Street",
+        city: "Oxtail City",
+        zip_code: "44444",
+        state: "Jamaica Land",
+        country: "Jamaica",
+        phone: "333-333-3333",
+        trip_id: trip2.id
     }
 ]
 

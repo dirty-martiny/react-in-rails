@@ -8,16 +8,16 @@ class SightsController < ApplicationController
             render json: sight.errors, status: :unprocessable_entity
         end
     end
+
     def update
-    sight = Sight.find(params[:id])
-    sight.update(sight_params)
-    if sight.valid?
-      render json: sight
-    else
-      render json: sight.errors, status: :unprocessable_entity
-    end
-  end 
-  
+      sight = Sight.find(params[:id])
+      sight.update(sight_params)
+      if sight.valid?
+        render json: sight
+      else
+        render json: sight.errors, status: :unprocessable_entity
+      end
+    end 
 
     def destroy
         sight = Sight.find(params[:id])
