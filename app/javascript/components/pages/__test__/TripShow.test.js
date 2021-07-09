@@ -6,11 +6,11 @@ import TripShow from "../TripShow";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("When TripShow renders", () => {
-  it("displays TripShow heading", () => {
+  test("displays TripShow heading", () => {
     const trip = shallow(<TripShow />);
 
     const tripShowHeading = trip.find("h1");
 
-    expect(tripShowHeading.text(1)).toEqual("Trip Show");
+    expect(tripShowHeading.text()).toEqual("Trip Show");
   });
 });
