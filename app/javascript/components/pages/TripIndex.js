@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 export default class TripIndex extends Component {
   render() {
     const { trips } = this.props;
+    let publicTrips = trips.filter((trip) => {
+      return trip.is_public;
+    });
     return (
       <div>
         <h1>TripIndex</h1>
         {trips &&
-          trips.map((trip) => {
+          publicTrips.map((trip) => {
             return (
               <div key={trip.id}>
                 <h2>{trip.trip_name}</h2>
