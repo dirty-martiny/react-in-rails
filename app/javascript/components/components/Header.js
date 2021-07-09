@@ -19,7 +19,7 @@ export default class Header extends Component {
         {logged_in && (
           <div>
             <Link to="/">Home</Link>
-            <Link to="/tripsindex">My Trips</Link>
+            <Link to="/yourtrips">Your Trips</Link>
             <Link to="/newtrip">New Trip</Link>
             <Link to="/about">About Us</Link>
             <a href={sign_out_route}>Sign Out</a>

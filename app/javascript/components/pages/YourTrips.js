@@ -1,21 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class Dash extends Component {
+export default class YourTrips extends Component {
   render() {
     const { trips, user } = this.props;
-    let publicTrips = trips.filter((trip) => {
-      return trip.is_public;
+    let yourtrips = trips.filter((trip) => {
+      return trip.user_id === user.id;
     });
     return (
       <div>
-        <div>
-          <h1>Welcome {`${user.email}`}</h1>
-          <Link to="/yourtrips">Your Trips</Link>
-        </div>
-
+        <h1>Your Trips</h1>
         {trips &&
-          publicTrips.map((trip) => {
+          yourtrips.map((trip) => {
             return (
               <div key={trip.id}>
                 <h2>{trip.trip_name}</h2>
