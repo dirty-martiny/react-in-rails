@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import TripIndex from "./pages/TripIndex";
 import TripShow from "./pages/TripShow";
 import SightNew from "./pages/SightNew";
+import SightEdit from "./pages/SightEdit";
 import TripNew from "./pages/TripNew";
-import TripEdit from "./pages/TripEdit"
+import TripEdit from "./pages/TripEdit";
 import AboutUs from "./pages/AboutUs";
-import NotFound from './pages/NotFound'
+import NotFound from "./pages/NotFound";
 import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
@@ -47,6 +48,28 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((payload) => this.indexTrips())
       .catch((errors) => console.log("Sight create fetch errors:", errors));
+  };
+
+  editSight = (sight, id) => {
+    fetch(`/sights/${id}`, {
+      body: JSON.stringify(sight),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexTrips();
+      })
+      .catch((errors) => {
+        console.log("edit errors:", errors);
+      });
   };
 
   createNewTrip = (newTrip) => {
@@ -116,24 +139,23 @@ class App extends React.Component {
     fetch(`/trips/${id}`, {
       body: JSON.stringify(trip),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "PATCH"
+      method: "PATCH",
     })
-    .then(response => {
-      console.log(response)
-      if(response.status === 422){
-        alert("There is something wrong with your submission.")
-      }
-      return response.json()
-    })
-    .then(() => {
-      this.indexTrips()
-    })
-    .catch(errors => {
-      console.log("edit errors:", errors)
-    })
-  }
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexTrips();
+      })
+      .catch((errors) => {
+        console.log("edit errors:", errors);
+      });
+  };
 
   render() {
     const {
@@ -161,6 +183,25 @@ class App extends React.Component {
               path="/tripsindex"
               render={(props) => {
                 return <TripIndex trips={this.state.trips} />;
+              }}
+            />
+            <Route
+              path="/trips/:tripId/sight-edit/:sightId"
+              render={(props) => {
+                const trip = this.state.trips.find(
+                  (trip) => trip.id === +props.match.params.tripId
+                );
+
+                let sight = trip.sights.find(
+                  (sight) => sight.id === +props.match.params.sightId
+                );
+                return (
+                  <SightEdit
+                    editSight={this.editSight}
+                    current_user={current_user}
+                    sight={sight}
+                  />
+                );
               }}
             />
             <Route
@@ -196,12 +237,21 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path={"/tripedit/:id"} render={ (props) => {
-            let id =props.match.params.id
-            let trip = this.state.trips.find(trip => trip.id === +id)
-            return <TripEdit editTrip={ this.editTrip } trip={ trip } user={current_user}/>
-          }} />
-          <Route component={ NotFound }/>
+            <Route
+              path="/tripedit/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let trip = this.state.trips.find((trip) => trip.id === +id);
+                return (
+                  <TripEdit
+                    editTrip={this.editTrip}
+                    trip={trip}
+                    user={current_user}
+                  />
+                );
+              }}
+            />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       </React.Fragment>
