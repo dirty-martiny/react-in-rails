@@ -3,15 +3,22 @@
     padding: 0;
 }
 .footer-main {
-    h3{
-        margin-top: 2rem;
-        background-color:rgb(230, 190, 190);
-    }
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(193, 223, 205) ;
+    padding: .3rem;
     .footer-link{
-        display:flex;
-        justify-content: flex-end;
+        margin-top: 15px;
+        margin-right: 3rem;
         color:rgb(251, 254, 251);
-        background-color: rgb(230, 190, 190) ;
         text-decoration: none;
+    }
+    .footer-home-link{
+        font-size: 35px;
+        font-family: cursive;
+        color:rgb(248, 250, 207);
+        text-decoration: none;
+        margin-left: 3rem;
     }
 }
