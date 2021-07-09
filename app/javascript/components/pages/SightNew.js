@@ -27,13 +27,11 @@ export class SightNew extends Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state.form);
     this.props.createSight(this.state.form);
     this.setState({ submitted: true });
   };
 
   render() {
-    console.log(this.props.trip && this.props.trip.id);
     return (
       <div>
         <h1>Sight New Page</h1>
@@ -116,7 +114,9 @@ export class SightNew extends Component {
             Add To Trip
           </Button>
         </Form>
-        {this.state.submitted && <Redirect to = {`/trips/${this.props.trip.id}`}/>}
+        {this.state.submitted && (
+          <Redirect to={`/trips/${this.props.trip.id}`} />
+        )}
       </div>
     );
   }

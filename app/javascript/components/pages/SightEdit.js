@@ -27,13 +27,11 @@ export class SightEdit extends Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state.form);
-    this.props.editSight(this.state.form);
+    this.props.editSight(this.state.form, this.props.sight.id);
     this.setState({ submitted: true });
   };
 
   render() {
-    console.log(this.props.trip && this.props.trip.id);
     return (
       <div>
         <h1>Sight New Page</h1>
@@ -117,7 +115,7 @@ export class SightEdit extends Component {
           </Button>
         </Form>
         {this.state.submitted && (
-          <Redirect to={`/trips/${this.props.trip && this.props.trip.id}`} />
+          <Redirect to={`/trips/${this.props.sight.trip_id}`} />
         )}
       </div>
     );
