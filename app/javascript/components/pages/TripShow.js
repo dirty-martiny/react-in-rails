@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 export default class TripShow extends Component {
+  handleTripDelete = () => {
+    this.props.deleteTrip(this.props.trip.id);
+  };
   render() {
-    const { trip } = this.props;
+    const { trip, logged_in } = this.props;
     return (
       <div>
         <h1>Trip Show</h1>
@@ -24,15 +28,33 @@ export default class TripShow extends Component {
                     <p>{sight.state}</p>
                     <p>{sight.country}</p>
                     <p>{sight.phone}</p>
+                    {logged_in && (
+                      <div>
+                        <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
+                          Edit sight
+                        </Link>
+                        <Button
+                          onClick={() => this.props.deleteSight(sight.id)}
+                        >
+                          Delete Sight
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 );
               })}
             <div>
               <Link to="/tripsindex">Back to Trips</Link>
             </div>
-            <div>
-              <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
-            </div>
+            {logged_in && (
+              <div>
+                <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
+                <Link to="/tripsindex">
+                  <Button onClick={this.handleTripDelete}>Delete Trip</Button>
+                </Link>
+                <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
+              </div>
+            )}
           </div>
         )}
       </div>
