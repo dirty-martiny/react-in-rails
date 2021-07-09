@@ -30,6 +30,9 @@ export default class TripShow extends Component {
                     <p>{sight.phone}</p>
                     {logged_in && (
                       <div>
+                        <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
+                          Edit sight
+                        </Link>
                         <Button
                           onClick={() => this.props.deleteSight(sight.id)}
                         >
@@ -45,15 +48,13 @@ export default class TripShow extends Component {
             </div>
             {logged_in && (
               <div>
+                <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
                 <Link to="/tripsindex">
                   <Button onClick={this.handleTripDelete}>Delete Trip</Button>
                 </Link>
                 <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
               </div>
             )}
-            <div>
-              <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
-            </div>
           </div>
         )}
       </div>
