@@ -51,8 +51,16 @@ trips.each do |attributes|
   puts "creating trips #{attributes}"
 end
 
-trip1 = Trip.where(user_id: user.id)
-trip2 = Trip.where(user_id: user2.id)
+trip1 = Trip.first
+trip2 = Trip.third
+# trip2 = Trip.where(user_id: user2.id)
+
+# wouldnt this find trips base on the trip id and not the user id?
+# trip1 = Trip.find user.id
+# trip2 = Trip.find user2.id
+
+# trip_id: trip1.first.id
+
 
 # sights
 # t.string "name"
