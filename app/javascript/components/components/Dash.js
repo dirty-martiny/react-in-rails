@@ -9,7 +9,11 @@ export default class Dash extends Component {
     });
     return (
       <div>
-        <h1>Welcome {`${user.email}`}</h1>
+        <div>
+          <h1>Welcome {`${user.email}`}</h1>
+          <Link to="/yourtrips">Your Trips</Link>
+        </div>
+
         {trips &&
           publicTrips.map((trip) => {
             return (
