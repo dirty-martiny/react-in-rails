@@ -15,7 +15,6 @@ class TripsController < ApplicationController
     # end
 
 
-
     def index 
         trips = Trip.all
         if user_signed_in?
@@ -35,16 +34,18 @@ class TripsController < ApplicationController
       end
     end
 
-    def update
-        trip = Trip.find(params[:id])
-        trip.update(trip_params)
-      if trip.valid?
-        render json: trip
-      else
-        render json: trip.errors, status: unprocessable_entity
+      # update
+      def update
+          trip = Trip.find(params[:id])
+          trip.update(trip_params)
+        if trip.valid?
+          render json: trip
+        else
+          render json: trip.errors, status: unprocessable_entity
+        end
       end
-    end
-
+    
+# destroy
     def destroy
       trip = Trip.find(params[:id])
       sights = Sight.where({trip_id: trip.id})
@@ -58,11 +59,10 @@ class TripsController < ApplicationController
           render json: trip
         else
           render json: trip.errors, status: :unprocessable_entity
+        end
       end
-    end
-    
+
 private
-  
     def trip_params
       params.require(:trip).permit(:trip_name, :trip_location, :trip_date_range, :is_public, :user_id)
     end

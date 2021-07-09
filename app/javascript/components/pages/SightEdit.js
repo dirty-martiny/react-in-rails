@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
-export class SightNew extends Component {
+export class SightEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
       form: {
-        name: "",
-        address1: "",
-        city: "",
-        zip_code: "",
-        state: "",
-        country: "",
-        phone: "",
+        name: this.props.sight.name,
+        address1: this.props.sight.address1,
+        city: this.props.sight.city,
+        zip_code: this.props.sight.zip_code,
+        state: this.props.sight.state,
+        country: this.props.sight.country,
+        phone: this.props.sight.phone,
         trip_id: this.props.trip && this.props.trip.id,
       },
       submitted: false,
@@ -27,7 +27,7 @@ export class SightNew extends Component {
   };
 
   handleSubmit = () => {
-    this.props.createSight(this.state.form);
+    this.props.editSight(this.state.form, this.props.sight.id);
     this.setState({ submitted: true });
   };
 
@@ -111,15 +111,15 @@ export class SightNew extends Component {
             name="submit"
             onClick={this.handleSubmit}
           >
-            Add To Trip
+            Edit Sight
           </Button>
         </Form>
         {this.state.submitted && (
-          <Redirect to={`/trips/${this.props.trip.id}`} />
+          <Redirect to={`/trips/${this.props.sight.trip_id}`} />
         )}
       </div>
     );
   }
 }
 
-export default SightNew;
+export default SightEdit;
