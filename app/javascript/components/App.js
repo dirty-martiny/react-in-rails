@@ -41,7 +41,7 @@ class App extends React.Component {
         return response.json();
       })
       .then((payload) => {
-        this.setState({ businesses: payload });
+        this.setState({ businesses: payload.businesses });
       })
       .catch((errors) => {
         console.log("index errors:", errors);
@@ -268,6 +268,7 @@ class App extends React.Component {
                       createSight={this.createSight}
                       trip={trip}
                       yelpApi={this.yelpApi}
+                      businesses={this.state.businesses}
                     />
                   );
                 }}

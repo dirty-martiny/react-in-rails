@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { Redirect } from "react-router-dom";
+import YelpBusinesses from "./YelpBusinesses";
 
 export default class YelpSearch extends Component {
   constructor(props) {
@@ -24,13 +25,16 @@ export default class YelpSearch extends Component {
     this.setState({ submitted: true });
   };
   render() {
-    const { yelpApi } = this.props;
+    const { yelpApi, businesses } = this.props;
     return (
       <div>
         <h1>Search For Sights Near You</h1>
         <Form>
           <FormGroup>
-            <Label for="item">What are you in the mood for?</Label>
+            <Label for="item">
+              What are you in the mood for?{" "}
+              <span>e.i 'museum', 'food', 'park'</span>
+            </Label>
             <Input
               type="text"
               name="item"
@@ -41,7 +45,8 @@ export default class YelpSearch extends Component {
           <br />
           <FormGroup>
             <Label for="location">
-              Location: <span>e.i 'food', 'city'</span>)
+              Location:{" "}
+              <span>e.i 'city', 'state', 'zip-code', or 'country'</span>)
             </Label>
             <Input
               type="text"
@@ -61,6 +66,7 @@ export default class YelpSearch extends Component {
             Search
           </Button>
         </Form>
+        {businesses && <YelpBusinesses businesses={businesses} />}
         {this.state.submitted && (
           <Redirect to={`/trips/${this.props.trip.id}`} />
         )}
