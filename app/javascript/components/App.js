@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import TripIndex from "./pages/TripIndex";
 import TripShow from "./pages/TripShow";
-import SightNew from "./pages/SightNew";
 import SightEdit from "./pages/SightEdit";
 import TripNew from "./pages/TripNew";
 import TripEdit from "./pages/TripEdit";
@@ -13,18 +12,41 @@ import Dash from "./components/Dash";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
 import YourTrips from "./pages/YourTrips";
+import CreateSight from "./pages/CreateSight";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: [],
+      trips: false,
+      businesses: false,
     };
   }
 
   componentDidMount() {
     this.indexTrips();
   }
+
+  yelpApi = (item, location) => {
+    const data = { item: item, location: location };
+    fetch("/search", {
+      body: JSON.stringify(data),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((payload) => {
+        this.setState({ businesses: payload });
+      })
+      .catch((errors) => {
+        console.log("index errors:", errors);
+      });
+  };
 
   indexTrips = () => {
     fetch("/trips")
@@ -168,6 +190,7 @@ class App extends React.Component {
       sign_in_route,
       sign_out_route,
     } = this.props;
+    console.log("businesses", this.state.businesses);
     return (
       <React.Fragment>
         <Router>
@@ -237,9 +260,15 @@ class App extends React.Component {
                 path="/sightnew/:id"
                 render={(props) => {
                   let id = +props.match.params.id;
-                  let trip = this.state.trips.find((trip) => trip.id === id);
+                  let trip =
+                    this.state.trips &&
+                    this.state.trips.find((trip) => trip.id === id);
                   return (
-                    <SightNew createSight={this.createSight} trip={trip} />
+                    <CreateSight
+                      createSight={this.createSight}
+                      trip={trip}
+                      yelpApi={this.yelpApi}
+                    />
                   );
                 }}
               />
