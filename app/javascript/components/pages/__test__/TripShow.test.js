@@ -12,6 +12,18 @@ describe("When TripShow renders", () => {
     trip_date_range: "12/20/2021 - 1/5/2022",
     is_public: false,
     user_id: 1,
+    sights: [
+      {
+        name: "Taco Bell",
+        address1: "Bell Street",
+        city: "Taco",
+        zip_code: "11111",
+        state: "Jamaica Land",
+        country: "Jamaica",
+        phone: "222-222-2222",
+        trip_id: 1,
+      },
+    ],
   };
   it("displays TripShow heading", () => {
     const trip = shallow(<TripShow trip={mockTrip} />);
