@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+// import video1 from "../../../assets/videos/video1.mp4";
 
 export default class LandingPage extends Component {
   render() {
     return (
-      <div>
-        <h2>Travel More</h2>
-        <p>
-          One place for all your trip planning{" "}
-          <span>a new way to share your travels</span>
-        </p>
-        <p>Want to travel to the same place again and loved your trip</p>
-        <p>Do it again with your saved trips</p>
+      <div className="landing-container">
+        {/* <video src="../../../assets/videos/video1.mp4" autoPlay loop muted /> */}
+        <div className="landing-container-2">
+          <h2>Travel More</h2>
+          <p>
+            One place for all your trip planning{" "}
+            <span>a new way to share your travels</span>
+          </p>
+          <p>Want to travel to the same place again and loved your trip</p>
+          <p>Do it again with your saved trips</p>
+        </div>
       </div>
     );
   }

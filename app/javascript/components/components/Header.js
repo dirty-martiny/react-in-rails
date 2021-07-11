@@ -6,24 +6,44 @@ export default class Header extends Component {
     const { sign_out_route, sign_in_route, new_user_route, logged_in } =
       this.props;
     return (
-      <div>
-        <Link to="/">Travel More</Link>
+      <div className="header-container">
+        <Link to="/" className="travel-more">
+          Travel More
+        </Link>
         {!logged_in && (
-          <div>
-            <Link to="/tripsindex">Trips</Link>
-            <Link to="/about">About Us</Link>
-            <a href={sign_in_route}>Sign In</a>
-            <a href={new_user_route}>Sign Up</a>
-          </div>
+          <>
+            <Link to="/tripsindex" className="header-links">
+              Trips
+            </Link>
+            <Link to="/about" className="header-links">
+              About Us
+            </Link>
+            <a href={sign_in_route} className="header-links">
+              Sign In
+            </a>
+            <a href={new_user_route} className="header-links">
+              Sign Up
+            </a>
+          </>
         )}
         {logged_in && (
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/yourtrips">Your Trips</Link>
-            <Link to="/newtrip">New Trip</Link>
-            <Link to="/about">About Us</Link>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
+          <>
+            <Link to="/" className="header-links">
+              Home
+            </Link>
+            <Link to="/yourtrips" className="header-links">
+              Your Trips
+            </Link>
+            <Link to="/newtrip" className="header-links">
+              New Trip
+            </Link>
+            <Link to="/about" className="header-links">
+              About Us
+            </Link>
+            <a href={sign_out_route} className="header-links">
+              Sign Out
+            </a>
+          </>
         )}
       </div>
     );
