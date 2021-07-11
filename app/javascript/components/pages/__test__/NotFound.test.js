@@ -5,8 +5,8 @@ import NotFound from "../NotFound";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("When AboutUs renders", () => {
-  it("displays a heading that displays About Us", () => {
+describe("When not found renders", () => {
+  it("displays a heading that displays !!!No Vacations Here!!!", () => {
     const notFound = shallow(<NotFound />);
 
     const notFoundheader = notFound.find("h1");
