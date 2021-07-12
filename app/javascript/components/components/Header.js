@@ -8,78 +8,71 @@ import {
   Nav,
   NavItem,
   NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
 } from "reactstrap";
 
 export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: true,
+      isOpen: false,
     };
   }
-  toggleNavbar = () => {
-    this.setState({ collapsed: !collapsed });
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
     const { sign_out_route, sign_in_route, new_user_route, logged_in } =
       this.props;
     return (
       <div className="header-container">
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">
-            {/* <Link to="/">Travel More</Link> */}
-            Travel More
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
-              </NavItem>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Travel More</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              {!logged_in && (
+                <>
+                  <NavItem>
+                    <Link to="/tripsindex">Trips</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/about">About Us</Link>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href={sign_in_route}>Sign In</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href={new_user_route}>Sign Up</NavLink>
+                  </NavItem>
+                </>
+              )}
+              {logged_in && (
+                <>
+                  <NavItem>
+                    <Link to="/">Home</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/yourtrips">Your Trips</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/newtrip">New Trip</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/about">About Us</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link href={sign_out_route}>Sign Out</Link>
+                  </NavItem>
+                </>
+              )}
             </Nav>
           </Collapse>
         </Navbar>
-
-        {!logged_in && (
-          <>
-            <Link to="/tripsindex" className="header-links">
-              Trips
-            </Link>
-            <Link to="/about" className="header-links">
-              About Us
-            </Link>
-            <a href={sign_in_route} className="header-links">
-              Sign In
-            </a>
-            <a href={new_user_route} className="header-links">
-              Sign Up
-            </a>
-          </>
-        )}
-        {logged_in && (
-          <>
-            <Link to="/" className="header-links">
-              Home
-            </Link>
-            <Link to="/yourtrips" className="header-links">
-              Your Trips
-            </Link>
-            <Link to="/newtrip" className="header-links">
-              New Trip
-            </Link>
-            <Link to="/about" className="header-links">
-              About Us
-            </Link>
-            <a href={sign_out_route} className="header-links">
-              Sign Out
-            </a>
-          </>
-        )}
       </div>
     );
   }
