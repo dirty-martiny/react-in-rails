@@ -190,7 +190,7 @@ class App extends React.Component {
       sign_in_route,
       sign_out_route,
     } = this.props;
-    console.log("businesses", this.state.businesses);
+
     return (
       <React.Fragment>
         <Router>
