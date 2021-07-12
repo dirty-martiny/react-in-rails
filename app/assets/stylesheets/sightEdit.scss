@@ -1,14 +1,10 @@
 @import "variables";
-
-.sight-new-main{
+.sight-edit-main{
     width: 50%;
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
     color: $blue-purple;
 
-    h1{
-        font-family: $font;
-    }
     .button-style{
         background-color: $pink;
         color: $blue-purple;
@@ -18,6 +14,6 @@
         background-color: $green;
         color: $blue-purple;
     }
-    
-    
+
+  
 }

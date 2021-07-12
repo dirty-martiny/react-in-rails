@@ -33,7 +33,7 @@ export class SightEdit extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sight-edit-main">
         <h1>Sight Edit Page</h1>
         <Form>
           <FormGroup>
