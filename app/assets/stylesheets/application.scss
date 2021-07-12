@@ -20,3 +20,11 @@ Nav - header - #DAF2DC
  */
 
 @import "bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import "variables";
+
+.form-control,
+.form-control:focus {
+  color: $blue-purple;
+  text-align: center;
+}

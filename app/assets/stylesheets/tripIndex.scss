@@ -1,5 +1,33 @@
-div.tripIndex {
-  div.container1 {
-    color: green;
+@import "variables"; 
+.tripindex-container{
+    color: $blue-purple;
+    margin: 0 auto;
+    width: 80%;
+    align-items: center;
+
+  h1{
+    font-family: $header;
   }
+  .btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color:  $pink;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+  }
+
+  .btn:hover{
+    background-color: $green;
+    color: $blue-purple;
+  }
+
+  h1{
+    text-align: center;
+  }
+  .card-body{
+    align-items: center;
+    color: $blue-purple;
+  }
+  
 }
