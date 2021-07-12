@@ -1,25 +1,34 @@
-$pink: #ffcce7;
-$green: #daf2dc;
-$light-blue: #81b7d2;
-$blue-purple: #4d5198;
-$font: "Abril Fatface", cursive;
+@import "variables";
 
 .header-container {
   .navbar-nav {
     align-items: center;
   }
+
+  .navbar-brand {
+    font-family: $header;
+  }
+
   .bg-light {
     background-color: $green !important;
   }
 
   a {
     text-decoration: none;
-    color: $blue-purple;
+    color: $blue-purple !important;
     padding: 0.5rem;
   }
-  a:hover {
-    color: $blue-purple;
-    font-family: $font;
-    font-weight: 100;
+  a.navbar-brand:hover {
+    color: $pink !important;
+  }
+
+  .nav-item {
+    a:hover {
+      background-color: $seeThroughPink;
+      border-radius: 10px;
+      color: $blue-purple !important;
+      font-family: $header;
+      font-weight: 100;
+    }
   }
 }

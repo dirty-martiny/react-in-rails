@@ -1,11 +1,14 @@
 // #daf2dc62
+
+// <iframe src="https://giphy.com/embed/l4Fsy3bOORF1iu7JK" width="402" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/photography-beach-waves-l4Fsy3bOORF1iu7JK">via GIPHY</a></p>
 .landing-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 88vh;
-  background-image: url(image_path("starfish.jpg"));
+  background-image: url(image_path("beach.gif"));
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

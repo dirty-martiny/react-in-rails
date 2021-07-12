@@ -1,24 +1,22 @@
 @import "variables";
 
-.sight-new-main{
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
+.sight-new-main {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: $blue-purple;
+
+  h1 {
+    font-family: $header;
+  }
+
+  .button-style {
+    background-color: $pink;
     color: $blue-purple;
+  }
 
-    h1{
-        font-family: $font;
-    }
-    
-    .button-style{
-        background-color: $pink;
-        color: $blue-purple;
-    }
-
-    .button-style:hover{
-        background-color: $green;
-        color: $blue-purple;
-    }
-    
-    
+  .button-style:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
 }
