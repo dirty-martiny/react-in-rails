@@ -1,73 +1,27 @@
 
-div.tripIndex {
-  div.container1 {
-    color: green;
-  }
-  .main-container{
-    background-color:  #DAF2DC;
-    margin: 20px;
-  }
-}
 
-.main-container{
+.tripindex-container{
     color: #4D5198;
-    // background-color: antiquewhite;
     background-color: white;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+
+  .btn{
+    text-decoration: none;
+    background-color:  #FFCCE7;
+    padding: 10px;
+    border-radius: 8px;
+    color: #4D5198
   }
-.main-header{
-   padding: 10px;
-  display: flex;
-  justify-content:space-around; 
- background-color:  #DAF2DC;
-  
-}
-.logo{
-  color: #4D5198;
-  font-family: cursive;
-  font-size: 35px;
-  border-radius: 2px;
-  font-weight: bold;
-  text-shadow: 1px 1px #ffffff;
-  border-radius: 3px;
-  transition: all .5s ease-in;
-}
-.logo:hover{
-background-color: #81B7D2;
-color: white;
- transition: width 2s;
-transform: scale(1.1);
-}
-.nvb{
-  padding: 10px;
-  text-decoration: none;
-  color: #4D5198;
-  padding-top: 25px;
-  border-radius: 3px;
-  transition: all .5s ease-in;
-  font-family: 'Otomanopee One', sans-serif;
-  font-weight: bold;
-}
-.nvb:visited{
-  color: #363ecf;
-  text-shadow: 2px 2px #ffffff;
-}
-.nvb:hover{
-background-color:  #FFCCE7;
-color: white;
-transform: scale(1.1);
-}
-.more-details{
-  text-decoration: none;
-  background-color:  #FFCCE7;
-  padding: 10px;
-  border-radius: 8px;
-  color: #4D5198;
-}
-.more-details:hover{
-background-color: #DAF2DC;
-color: white;
+
+  .btn:hover{
+    background-color: #DAF2DC;
+    color: white;
+  }
+
+  h1{
+    text-align: center;
+  }
+
 }
