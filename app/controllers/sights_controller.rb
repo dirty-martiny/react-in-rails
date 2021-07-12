@@ -1,12 +1,12 @@
 class SightsController < ApplicationController
     
     def create
-        sight = Sight.create(sight_params)
-        if sight.valid?
-            render json: sight
-        else
-            render json: sight.errors, status: :unprocessable_entity
-        end
+      sight = Sight.create(sight_params)
+      if sight.valid?
+          render json: sight
+      else
+          render json: sight.errors, status: :unprocessable_entity
+      end
     end
 
     def update
@@ -20,13 +20,13 @@ class SightsController < ApplicationController
     end 
 
     def destroy
-        sight = Sight.find(params[:id])
-        sight.destroy
-        if sight.valid?
+      sight = Sight.find(params[:id])
+      sight.destroy
+      if sight.valid?
         render json: sight
-        else
+      else
         render json: sight.errors, status: :unprocessable_entity
-        end
+      end
     end
     
     private
