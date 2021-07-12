@@ -25,7 +25,7 @@ export default class YelpSearch extends Component {
     this.setState({ submitted: true });
   };
   render() {
-    const { yelpApi, businesses } = this.props;
+    const { sightSearch, businesses } = this.props;
     return (
       <div>
         <h1>Search For Sights Near You</h1>
@@ -60,7 +60,7 @@ export default class YelpSearch extends Component {
             className="button-style"
             name="submit"
             onClick={() => {
-              yelpApi(this.state.form.item, this.state.form.location);
+              sightSearch(this.state.form.item, this.state.form.location);
             }}
           >
             Search
