@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import video1 from "../assets/video1.mp4";
 
 export default class LandingPage extends Component {
   render() {
