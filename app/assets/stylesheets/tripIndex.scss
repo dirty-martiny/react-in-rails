@@ -1,27 +1,36 @@
 
-
+$pink: #FFCCE7;
+$green: #DAF2DC;
+$light-blue: #81B7D2;
+$blue-purple: #4D5198;
+$font: "Abril Fatface", cursive;
 .tripindex-container{
-    color: #4D5198;
+    color: $blue-purple;
     background-color: white;
     margin: 0 auto;
     width: 80%;
-    margin: 0 auto;
+    align-items: center;
 
   .btn{
+    box-shadow: 1px 1px;
     text-decoration: none;
-    background-color:  #FFCCE7;
+    background-color:  $pink;
     padding: 10px;
     border-radius: 8px;
-    color: #4D5198
+    color: $blue-purple;
   }
 
   .btn:hover{
-    background-color: #DAF2DC;
-    color: white;
+    background-color: $green;
+    color: $blue-purple;
   }
 
   h1{
     text-align: center;
+  }
+  .card-body{
+    align-items: center;
+    color: $blue-purple;
   }
 
 }

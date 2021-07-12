@@ -18,7 +18,7 @@ export default class TripIndex extends Component {
                 <Card>
                   <CardBody>
                     <CardTitle tag="h5">{trip.trip_name}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">
+                    <CardSubtitle tag="h6" className="mb-2">
                       {trip.trip_location}
                     </CardSubtitle>
                     <Link to={`/trips/${trip.id}`}>
