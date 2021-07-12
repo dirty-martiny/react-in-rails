@@ -5,7 +5,7 @@ export default class TripIndex extends Component {
   render() {
     const { trips } = this.props;
     return (
-      <div>
+      <div className="main-container">
         <h1>TripIndex</h1>
         {trips &&
           trips.map((trip) => {
@@ -14,7 +14,7 @@ export default class TripIndex extends Component {
                 <h2>{trip.trip_name}</h2>
                 <p>{trip.trip_location}</p>
 
-                <Link to={`/trips/${trip.id}`}>More Details</Link>
+                <Link className="more-details" to={`/trips/${trip.id}`}>More Details</Link>
               </div>
             );
           })}

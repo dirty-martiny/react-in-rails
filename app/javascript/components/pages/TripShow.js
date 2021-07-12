@@ -9,10 +9,10 @@ export default class TripShow extends Component {
   render() {
     const { trip, logged_in, user } = this.props;
     return (
-      <div>
+      <div className="main-container">
         <h1>Trip Show</h1>
         {trip && (
-          <div>
+          <div className="">
             <h2>{trip.trip_name}</h2>
             <p>{trip.trip_location}</p>
             <p>{trip.trip_date_range}</p>
@@ -29,7 +29,7 @@ export default class TripShow extends Component {
                     <p>{sight.country}</p>
                     <p>{sight.phone}</p>
                     {logged_in && trip.user_id === user.id && (
-                      <div>
+                      <div className="links">
                         <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
                           Edit sight
                         </Link>
@@ -65,3 +65,4 @@ export default class TripShow extends Component {
     );
   }
 }
+ 
