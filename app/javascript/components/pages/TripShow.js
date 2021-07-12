@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Button, Card, CardText } from "reactstrap";
 
 export default class TripShow extends Component {
   handleTripDelete = () => {
@@ -9,48 +9,56 @@ export default class TripShow extends Component {
   render() {
     const { trip, logged_in, user } = this.props;
     return (
-      <div>
-        <h1>Trip Show</h1>
+      <div className="trip-show-main">
+        {/* <h1>Trip Show</h1> */}
         {trip && (
-          <div>
-            <h2>{trip.trip_name}</h2>
-            <p>{trip.trip_location}</p>
-            <p>{trip.trip_date_range}</p>
+          <Card className="trip-show-card">
+            <CardText><h2>{trip.trip_name}</h2></CardText>
+            <CardText>Location: {trip.trip_location}</CardText>
+            <CardText>When: {trip.trip_date_range}</CardText>
             {trip.is_public ? "Public" : "Private"}
             {trip &&
               trip.sights.map((sight) => {
                 return (
                   <div key={sight.id}>
-                    <h4>{sight.name}</h4>
-                    <p>{sight.address1}</p>
-                    <p>{sight.city}</p>
-                    <p>{sight.zip_code}</p>
-                    <p>{sight.state}</p>
-                    <p>{sight.country}</p>
-                    <p>{sight.phone}</p>
+                    <Card className="sight-show-card">
+                    <CardText>Name: {sight.name}</CardText>
+                    <CardText>Street Address: {sight.address1}</CardText>
+                    {/* <CardText>{sight.city}</CardText>
+                    <CardText>{sight.zip_code}</CardText>
+                    <CardText>{sight.state}</CardText>
+                    <CardText>{sight.country}</CardText> */}
+                    <CardText>Phone Number: {sight.phone}</CardText>
                     {logged_in && trip.user_id === user.id && (
-                      <div>
+                      <div className="sight-buttons-main">
                         <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
+                          <Button id="sight-button" onClick={() => this.props.editSight(sight.id)}>
                           Edit sight
+                          </Button>
                         </Link>
                         <Button
-                          onClick={() => this.props.deleteSight(sight.id)}
+                          id="sight-button" onClick={() => this.props.deleteSight(sight.id)}
                         >
                           Delete Sight
                         </Button>
                       </div>
                     )}
+                    </Card>
                   </div>
                 );
               })}
 
             {logged_in && trip.user_id === user.id && (
-              <div>
-                <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
-                <Link to="/tripsindex">
-                  <Button onClick={this.handleTripDelete}>Delete Trip</Button>
+              <div className="trip-buttons-main">
+                <Link to={`/tripedit/${trip.id}`}>
+                  <Button id="button" onClick={() =>this.props.editTrip}>Edit Trip</Button>
                 </Link>
-                <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
+                <Link to="/tripsindex">
+                  <Button id="button" onClick={this.handleTripDelete}>Delete Trip</Button>
+                </Link>
+                <Link to={`/sightnew/${trip.id}`}>
+                  <Button id="button" onClick={() => this.props.createSight}>New Sight</Button>
+                </Link>
               </div>
             )}
             {logged_in && <Link to="/">Back to Dash</Link>}
@@ -59,7 +67,7 @@ export default class TripShow extends Component {
                 <Link to="/tripsindex">Back to Trips</Link>
               </div>
             )}
-          </div>
+          </Card>
         )}
       </div>
     );
