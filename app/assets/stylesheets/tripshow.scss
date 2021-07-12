@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.trip-show-main{
+    h1{
+        text-align: center;
+    }
+
+    .trip-show-card{
+        width: 80%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-width: 10px;
+    }
+
+    .sight-show-card{
+        display: flex;
+        flex-direction: row;
+        row-gap: 2rem;
+        // border-radius: 10%;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trip-buttons-main{
+        display: flex;
+        justify-content: space-evenly;
+        // background-color: #FFCCE7;
+    }
+
+    #button{
+        background-color: #DAF2DC;
+        border: 2rem;
+    }
+
+    .sight-buttons-main{
+    }
+
+    #sight-button{
+        background-color: #DAF2DC;
+    }
+}
