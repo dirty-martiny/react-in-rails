@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Button, Card, CardText } from "reactstrap";
 
 export default class TripShow extends Component {
   handleTripDelete = () => {
@@ -21,36 +21,54 @@ export default class TripShow extends Component {
               trip.sights.map((sight) => {
                 return (
                   <div key={sight.id}>
-                    <h4>{sight.name}</h4>
-                    <p>{sight.address1}</p>
-                    <p>{sight.city}</p>
-                    <p>{sight.zip_code}</p>
-                    <p>{sight.state}</p>
-                    <p>{sight.country}</p>
-                    <p>{sight.phone}</p>
-                    {logged_in && trip.user_id === user.id && (
-                      <div className="links">
-                        <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
-                          Edit sight
-                        </Link>
-                        <Button
-                          onClick={() => this.props.deleteSight(sight.id)}
-                        >
-                          Delete Sight
-                        </Button>
-                      </div>
-                    )}
+                    <Card className="sight-show-card">
+                      <CardText>Name: {sight.name}</CardText>
+                      <CardText>Street Address: {sight.address1}</CardText>
+                      {/* <CardText>{sight.city}</CardText>
+                    <CardText>{sight.zip_code}</CardText>
+                    <CardText>{sight.state}</CardText>
+                    <CardText>{sight.country}</CardText> */}
+                      <CardText>Phone Number: {sight.phone}</CardText>
+                      {logged_in && trip.user_id === user.id && (
+                        <div className="links">
+                          <Link to={`/trips/${trip.id}/sight-edit/${sight.id}`}>
+                            <Button
+                              id="sight-button"
+                              onClick={() => this.props.editSight(sight.id)}
+                            >
+                              Edit sight
+                            </Button>
+                          </Link>
+                          <Button
+                            id="sight-button"
+                            onClick={() => this.props.deleteSight(sight.id)}
+                          >
+                            Delete Sight
+                          </Button>
+                        </div>
+                      )}
+                    </Card>
                   </div>
                 );
               })}
 
             {logged_in && trip.user_id === user.id && (
-              <div>
-                <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
-                <Link to="/tripsindex">
-                  <Button onClick={this.handleTripDelete}>Delete Trip</Button>
+              <div className="trip-buttons-main">
+                <Link to={`/tripedit/${trip.id}`}>
+                  <Button id="button" onClick={() => this.props.editTrip}>
+                    Edit Trip
+                  </Button>
                 </Link>
-                <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
+                <Link to="/tripsindex">
+                  <Button id="button" onClick={this.handleTripDelete}>
+                    Delete Trip
+                  </Button>
+                </Link>
+                <Link to={`/sightnew/${trip.id}`}>
+                  <Button id="button" onClick={() => this.props.createSight}>
+                    New Sight
+                  </Button>
+                </Link>
               </div>
             )}
             {logged_in && <Link to="/">Back to Dash</Link>}

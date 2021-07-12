@@ -27,13 +27,23 @@ export default class Header extends Component {
           </div>
         )}
         {logged_in && (
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/yourtrips">Your Trips</Link>
-            <Link to="/newtrip">New Trip</Link>
-            <Link to="/about">About Us</Link>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
+          <>
+            <Link to="/" className="header-links">
+              Home
+            </Link>
+            <Link to="/yourtrips" className="header-links">
+              Your Trips
+            </Link>
+            <Link to="/newtrip" className="header-links">
+              New Trip
+            </Link>
+            <Link to="/about" className="header-links">
+              About Us
+            </Link>
+            <a href={sign_out_route} className="header-links">
+              Sign Out
+            </a>
+          </>
         )}
       </div>
     );

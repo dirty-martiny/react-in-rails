@@ -4,7 +4,8 @@ require 'rest-client'
 class YelpController < ApplicationController
     def search  
         rest_item = params[:item]  
-        rest_location = params[:location]  
+        rest_location = params[:location]
+        # https://github.com/rest-client/rest-client
         response = RestClient::Request.execute(
             method: "GET",
             url: "https://api.yelp.com/v3/businesses/search?term=#{rest_item}&location=#{rest_location}",  
