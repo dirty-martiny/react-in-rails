@@ -1,16 +1,13 @@
-
-$pink: #FFCCE7;
-$green: #DAF2DC;
-$light-blue: #81B7D2;
-$blue-purple: #4D5198;
-$font: "Abril Fatface", cursive;
+@import "variables"; 
 .tripindex-container{
     color: $blue-purple;
-    background-color: white;
     margin: 0 auto;
     width: 80%;
     align-items: center;
 
+  h1{
+    font-family: $header;
+  }
   .btn{
     box-shadow: 1px 1px;
     text-decoration: none;
