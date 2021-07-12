@@ -1,0 +1,23 @@
+.sight-new-main{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #4D5198;
+
+    .button-style{
+        background-color: #FFCCE7;
+        color: #4D5198;
+    }
+
+    .button-style:hover{
+        background-color: #DAF2DC;
+        color: #4D5198;
+    }
+
+    .form-control:focus{
+        color: #4D5198;
+        text-align: center;
+    }
+    
+    
+}
