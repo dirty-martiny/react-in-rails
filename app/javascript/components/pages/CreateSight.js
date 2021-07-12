@@ -6,7 +6,7 @@ export default class CreateSight extends Component {
   render() {
     const { createSight, trip, sightSearch, businesses } = this.props;
     return (
-      <div>
+      <div className="create-sight-container">
         <SightNew createSight={createSight} trip={trip} />
         <YelpSearch sightSearch={sightSearch} businesses={businesses} />
       </div>
