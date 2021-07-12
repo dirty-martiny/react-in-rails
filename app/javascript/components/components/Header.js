@@ -8,11 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
 } from "reactstrap";
 
 export default class Header extends Component {
@@ -38,10 +33,14 @@ export default class Header extends Component {
               {!logged_in && (
                 <>
                   <NavItem>
-                    <Link to="/tripsindex">Trips</Link>
+                    <Link to="/tripsindex" className="nav-link">
+                      Trips
+                    </Link>
                   </NavItem>
                   <NavItem>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about" className="nav-link">
+                      About Us
+                    </Link>
                   </NavItem>
                   <NavItem>
                     <NavLink href={sign_in_route}>Sign In</NavLink>
