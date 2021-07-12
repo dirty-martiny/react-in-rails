@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 export default class Dash extends Component {
   render() {
     const { trips, user } = this.props;
-    let publicTrips = trips.filter((trip) => {
-      return trip.is_public;
-    });
+    let publicTrips =
+      trips &&
+      trips.filter((trip) => {
+        return trip.is_public;
+      });
     return (
       <div>
         <div>
