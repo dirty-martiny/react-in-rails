@@ -10,6 +10,12 @@
         font-weight: bolder;
     }
 
+    h5{
+        text-align: center;
+        color: $blue-purple;
+        margin-bottom: 5rem;
+    }
+
     p{
         text-align: center;
         color: $blue-purple;
@@ -21,11 +27,11 @@
         display: block;
         margin: auto;
         margin-top: 2rem;
-        margin-bottom: 5rem;
     }
 
     .home-link{
-        
-        
+        display: block;
+        text-align: center;
+        text-decoration: none;
     }
 }

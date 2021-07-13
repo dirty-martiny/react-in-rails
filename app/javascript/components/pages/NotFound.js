@@ -9,8 +9,9 @@ export class NotFound extends Component {
                 
                 <h1>404:</h1>
                 <p>Page Not Found</p>
-                <img className= "not-found-pic" src={theoffice} alt="jim from office sad face" />
                 <Link className="home-link" to="/">Go Back To Homepage</Link>
+                <img className= "not-found-pic" src={theoffice} alt="jim from office sad face" />
+                <h5>!!!No Vacations Here!!!</h5>
             </div>
         )
     }
