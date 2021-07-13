@@ -1,5 +1,52 @@
-.about-us {
+@import "variables";
+
+.about-us-container {
+  text-align: center;
+  padding: 3% 0;
+  color: $blue-purple;
+
+  div.au-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .au-title {
+    font-family: $header;
+  }
+
   img {
     width: 20%;
+  }
+
+  // .row is a reacstrap class
+  .row {
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+  }
+
+  .card,
+  .card-body {
+    border: none;
+  }
+
+  .card {
+    display: block;
+    padding: 3%;
+  }
+
+  .card:hover {
+    box-shadow: 2px 2px 4px $light-blue;
+  }
+
+  .card-subtitle {
+    font-family: cursive;
+  }
+
+  .card-text {
+    a {
+      text-decoration: none;
+    }
   }
 }

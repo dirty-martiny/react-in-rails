@@ -1,53 +1,111 @@
 import React, { Component } from "react";
 import mockaboutuspic from "../assets/mock-aboutus-pic.jpg";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Row,
+  Col,
+} from "reactstrap";
 
 export default class AboutUs extends Component {
   render() {
     return (
-      <div className="about-us">
-        <h2>About Us</h2>
+      <div className="about-us-container">
+        <h2 className="au-title">About Us</h2>
         <div>
-          <div>
-            <h3>Vivean Hanna</h3>
-            <img src={mockaboutuspic} alt="mock about us pic" />
-            <a href="https://github.com/Vivean28" target="_blank">
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/vivean-hanna-33b9021ab/"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-            <p>Role: Project Manager</p>
-          </div>
-          <div>
-            <h3>Kevin Burgin</h3>
-            <img src={mockaboutuspic} alt="mock about us pic" />
-            <a href="https://github.com/KevinBurgin" target="_blank">
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kevin-burgin-683110181/"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-            <p>Role: Design Lead</p>
-          </div>
-          <div>
-            <h3>Shazeen Fabius</h3>
-            <img src={mockaboutuspic} alt="mock about us pic" />
-            <a href="https://github.com/Shazeen15" target="_blank">
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shazeen-fabius/"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-            <p>Role: Tech Lead</p>
+          <div className="au-card">
+            <Row>
+              {/* vivean */}
+              <Col sm="4">
+                <Card>
+                  <CardImg
+                    top
+                    width="100%"
+                    src={mockaboutuspic}
+                    alt="mock about us pic"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Vivean Hanna</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">
+                      Role: Project Manager
+                    </CardSubtitle>
+                    <CardText>
+                      <a href="https://github.com/Vivean28" target="_blank">
+                        GitHub
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/vivean-hanna-33b9021ab/"
+                        target="_blank"
+                      >
+                        LinkedIn
+                      </a>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+
+              {/* kevin */}
+              <Col sm="4">
+                <Card>
+                  <CardImg
+                    top
+                    width="100%"
+                    src={mockaboutuspic}
+                    alt="mock about us pic"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Kevin Burgin</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">
+                      Role: Design Lead
+                    </CardSubtitle>
+                    <CardText>
+                      <a href="https://github.com/KevinBurgin" target="_blank">
+                        GitHub
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/kevin-burgin-683110181/"
+                        target="_blank"
+                      >
+                        LinkedIn
+                      </a>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+
+              {/* shazeen */}
+              <Col sm="4">
+                <Card>
+                  <CardImg
+                    top
+                    width="100%"
+                    src={mockaboutuspic}
+                    alt="mock about us pic"
+                  />
+                  <CardBody>
+                    <CardTitle tag="h5">Shazeen Fabius</CardTitle>
+                    <CardSubtitle tag="h6" className="mb-2 text-muted">
+                      Role: Tech Lead
+                    </CardSubtitle>
+                    <CardText>
+                      <a href="https://github.com/Shazeen15" target="_blank">
+                        GitHub
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/shazeen-fabius/"
+                        target="_blank"
+                      >
+                        LinkedIn
+                      </a>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
           </div>
           <hr />
           <div>
