@@ -1,29 +1,39 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+@import "variables";
+
 .footer-main {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(193, 223, 205) ;
+    background-color: $green;
     padding: .3rem;
+
     .footer-link{
-        margin-top: 15px;
         margin-right: 3rem;
-        color: #4D5198;
+        color: $blue-purple;
         text-decoration: none;
-        text-shadow: 1px 1px #ffffff;
     }
+
+    a{
+        padding: 0.5rem;
+    }
+
+    .footer-link:hover{
+        background-color: $seeThroughPink;
+        border-radius: 10px;
+        color: $blue-purple !important;
+        font-family: $header;
+        font-weight: 100;
+    }
+
     .footer-home-link{
-        font-size: 35px;
-        font-family: cursive;
-        color:rgb(251, 254, 251);
+        font-size: 20px;
+        font-family: $header;
+        color:$blue-purple;
         text-decoration: none;
         margin-left: 3rem;
-        text-shadow: 1px 1px #ffffff;
     }
+
     .footer-home-link:hover{
-        color: white;
+        color: $pink;
     }
 }

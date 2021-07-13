@@ -6,7 +6,7 @@ export class Footer extends Component {
     return (
       <div className="footer-main">
         <NavLink to="/" className="footer-home-link">
-          Travel-more
+          Travel More
         </NavLink>
         <NavLink to="/about" className="footer-link">
           About Us
