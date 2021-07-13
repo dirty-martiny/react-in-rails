@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Card, Button, CardTitle, CardText } from "reactstrap";
+import { Card, Button, CardBody, CardTitle, CardText } from "reactstrap";
 
 
 export default class TripShow extends Component {
@@ -25,7 +25,7 @@ export default class TripShow extends Component {
                     <Card body className="text-right">
                       {/* <CardTitle tag="h5"></CardTitle> */}
                       <CardText>
-                        <div className="style-s" key={sight.id}>
+                        <div key={sight.id}>
                           <h4>{sight.name}</h4>
                           <p>{sight.address1}</p>
                           <p>{sight.city}</p>
@@ -56,33 +56,35 @@ export default class TripShow extends Component {
               })}
 
             {logged_in && trip.user_id === user.id && (
-              <div>
-                <Card>
-                  <Button className="last-card">
+              <div className="bottom-btn">
+                <CardBody>
+                  <Button className="ts-btn">
                     <Link to={`/tripedit/${trip.id}`}>Edit Trip</Link>
                   </Button>
                   <Link to="/tripsindex">
                     <Button
-                      className="last-card"
+                      className="ts-btn ts-btn"
                       onClick={this.handleTripDelete}
                     >
                       Delete Trip
                     </Button>
                   </Link>
-                  <Button className="last-card">
+                  <Button className="ts-btn">
                     <Link to={`/sightnew/${trip.id}`}>New Sight</Link>
                   </Button>
-                </Card>
+                </CardBody>
               </div>
             )}
             {logged_in && (
-              <Button className="last-card">
+              <Button className="ts-btn  btd-btn">
                 <Link to="/">Back to Dash</Link>
               </Button>
             )}
             {!logged_in && (
               <div>
-                <Link to="/tripsindex">Back to Trips</Link>
+                <Link to="/tripsindex">
+                  Back to Trips
+                </Link>
               </div>
             )}
           </div>
