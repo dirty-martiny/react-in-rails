@@ -11,19 +11,16 @@
     flex-wrap: wrap;
   }
 
-  .au-title {
-    font-family: $header;
-  }
-
   img {
-    width: 20%;
+    width: 40%;
   }
 
-  // .row is a reacstrap class
+  //reacstrap class
   .row {
     padding: 2%;
     margin: 2%;
     border-radius: 10px;
+    align-items: flex-end;
   }
 
   .card,
@@ -38,6 +35,9 @@
 
   .card:hover {
     box-shadow: 2px 2px 4px $light-blue;
+    img {
+      width: 50%;
+    }
   }
 
   .card-subtitle {
