@@ -1,47 +1,56 @@
-*{
-    margin: 0;
-    padding: 0;
+@import "variables"; 
+.tripshow-container{
+    color: $blue-purple;
+    align-items: center;
+    padding: 4.375rem;
+    text-align: center;
+  h1{
+    font-family: $header;
+    display: flex;
+    text-align: center;
+  }
+  .text-right{
+      box-shadow: 2px 2px $light-blue;
+      margin: 3%;
+  }
+  .edit-btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color: $green;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+    margin: 3%;
+  }
+  .edit-btn:hover{
+    background-color: $pink;
+    color: $blue-purple;
+  }
+  .delete-btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color: $pink;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+    margin: 3%;
+  }
+  .delete-btn:hover{
+    background-color: $green;
+    color: $blue-purple;
+  }
+
+  .last-card{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color:  $pink;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+  }
+  .last-card:hover{
+    background-color: $green;
+    color: $blue-purple;
+  }
 }
-.trip-show-main{
-    h1{
-        text-align: center;
-    }
 
-    .trip-show-card{
-        width: 80%;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        border-width: 10px;
-    }
-
-    .sight-show-card{
-        display: flex;
-        flex-direction: row;
-        row-gap: 2rem;
-        // border-radius: 10%;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .trip-buttons-main{
-        display: flex;
-        justify-content: space-evenly;
-        // background-color: #FFCCE7;
-    }
-
-    #button{
-        background-color: #DAF2DC;
-        border: 2rem;
-    }
-
-    .sight-buttons-main{
-    }
-
-    #sight-button{
-        background-color: #DAF2DC;
-    }
-}
