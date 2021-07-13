@@ -29,7 +29,7 @@ export class TripEdit extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-container">
         <h1>Trip Edit Page</h1>
         <Form>
           <FormGroup>
