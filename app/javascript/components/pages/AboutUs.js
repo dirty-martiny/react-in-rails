@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import mockaboutuspic from "../assets/mock-aboutus-pic.jpg";
+import vivean from "../assets/vivean.png";
+import shaz from "../assets/shaz.jpeg";
 import {
   Card,
   CardImg,
@@ -25,7 +27,7 @@ export default class AboutUs extends Component {
                   <CardImg
                     top
                     width="100%"
-                    src={mockaboutuspic}
+                    src={vivean}
                     alt="mock about us pic"
                   />
                   <CardBody>
@@ -83,7 +85,7 @@ export default class AboutUs extends Component {
                   <CardImg
                     top
                     width="100%"
-                    src={mockaboutuspic}
+                    src={shaz}
                     alt="mock about us pic"
                   />
                   <CardBody>
@@ -110,13 +112,30 @@ export default class AboutUs extends Component {
           <hr />
           <div>
             <div className="about-devs">
-              <p>About The Developers</p>
-              <p>Vivean likes...</p>
-              <p>Kevin likes...</p>
-              <p>Shazeen likes...</p>
+              <h5>About The Developers</h5>
+              <p>
+                Vivean is a full stack developer that has love for creating and
+                being a part of something that adds value. Strong communication
+                skills with 17 years of experience of running and managing my
+                business financial and the all books and able to solve problems
+                and the to focus on the big picture. Positive out look on every
+                situation and the love to work on improving everyday myself and
+                my knowledge.
+              </p>
+              <p>
+                Kevin is a full stack developer backed with ten years of strong
+                communication and team building skills, developed through the
+                food service industry. As the design lead Kevin focused on the
+                user experience and the overall UI and UX design.
+              </p>
+              <p>
+                Shazeen is a full stack developer with strong one-on-one skills
+                gained by having a Master's in Clinical Counseling. As the tech
+                lead, I focus a lot on clean and functionable code.
+              </p>
             </div>
             <div className="dream-list">
-              <p>Dream List:</p>
+              <h5>Dream List:</h5>
               <ul>
                 <li>Allows users to add pictures to their sight</li>-{" "}
                 <li>Allow the user to select searched sight with a checkbox</li>
