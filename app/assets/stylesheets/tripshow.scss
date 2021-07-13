@@ -1,44 +1,81 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.trip-show-main {
-  h1 {
+@import "variables"; 
+.tripshow-container{
+    color: $blue-purple;
+    padding: 4.375rem;
     text-align: center;
+  h1{
+    font-family: $header;
+  }
+  .text-right{
+      box-shadow: 2px 2px $light-blue;
+      margin: 3%;
+  }
+  .edit-btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color: $green;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+    margin: 3%;
+     border: none;
+  }
+  .edit-btn:hover{
+    background-color: $pink;
+    color: $blue-purple;
+  }
+  .delete-btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color: $pink;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+    margin: 3%;
+    border: none;
+  }
+  .delete-btn:hover{
+    background-color: $green;
+    color: $blue-purple;
   }
 
-  .trip-show-card {
-    width: 80%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-width: 10px;
+  .ts-btn{
+    box-shadow: 1px 1px;
+    background-color:  $pink;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 3%;
+    color: $blue-purple;
+    a{
+     text-decoration: none;
+     color: $blue-purple;
+    }
+    
   }
-
-  .sight-show-card {
-    display: flex;
-    flex-direction: row;
-    row-gap: 2rem;
-    // border-radius: 10%;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+  .ts-btn:hover{
+    background-color: $green;
+    color: $blue-purple;
   }
-
-  .trip-buttons-main {
-    display: flex;
-    justify-content: space-evenly;
-    // background-color: #FFCCE7;
+  .bottom-btn{
+     
+      margin: 3%;
+      padding: 2%;
   }
-
-  #button {
-    background-color: #daf2dc;
-    border: 2rem;
+  .btd-btn{
+    box-shadow: 1px 1px;
+    text-decoration: none;
+    background-color: $green;
+    padding: 10px;
+    border-radius: 8px;
+    color: $blue-purple;
+    margin: 3%;
+    border: none;
+    
   }
-
-  #sight-button {
-    background-color: #daf2dc;
+  .btd-btn:hover{
+    background-color: $pink;
+    color: $blue-purple;
   }
 }
+
