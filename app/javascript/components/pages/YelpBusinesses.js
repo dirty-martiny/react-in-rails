@@ -34,14 +34,14 @@ export default class YelpBusinesses extends Component {
                       {business.location.phone}
                     </CardSubtitle>
                     <CardText>
-                      <p>
+                      <span>
                         {/* {" "} this is for the space that i need after each span */}
                         <span>{business.location.address1}</span> |{" "}
                         <span>{business.location.city}</span> |{" "}
                         <span>{business.location.zip_code}</span> |{" "}
                         <span>{business.location.state}</span> |{" "}
                         <span>{business.location.country}</span>
-                      </p>
+                      </span>
                     </CardText>
                   </CardBody>
                 </Card>

@@ -65,7 +65,7 @@ export default class Header extends Component {
                     <Link to="/about">About Us</Link>
                   </NavItem>
                   <NavItem>
-                    <Link href={sign_out_route}>Sign Out</Link>
+                    <NavLink href={sign_out_route}>Sign Out</NavLink>
                   </NavItem>
                 </>
               )}
