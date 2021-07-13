@@ -1,0 +1,18 @@
+@import "variables";
+
+.your-trips-container {
+  text-align: center;
+  padding: 3% 0;
+
+  h1.yt-header-title {
+    font-family: $header;
+  }
+
+  .row {
+    margin: 3% 0;
+  }
+
+  .yt-card {
+    justify-content: center;
+  }
+}
