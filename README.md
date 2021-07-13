@@ -29,3 +29,5 @@ Travel is web application for people who like to travel and share their travels 
 ### Dream List
 
 - Allows users to add pictures to their sight
+- Allow the user to select searched sight with a checkbox
+  - can select multiple sights
