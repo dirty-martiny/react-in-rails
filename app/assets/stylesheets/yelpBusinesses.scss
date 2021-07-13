@@ -1,5 +1,21 @@
-.yelp-businesses {
-  img {
-    width: 25%;
+@import "variables";
+
+.yelp-businesses-container {
+  padding: 3% 0;
+
+  h2.yb-header-title {
+    font-family: $header;
+    padding: 3% 0;
+  }
+
+  .yelp-businesses {
+    margin: 3%;
+    img {
+      width: 35%;
+    }
+  }
+
+  .card-img-top {
+    margin: 3% auto;
   }
 }

@@ -27,7 +27,7 @@ export default class YelpSearch extends Component {
   render() {
     const { sightSearch, businesses } = this.props;
     return (
-      <div>
+      <div className="yelp-search-container">
         <h1>Search For Sights Near You</h1>
         <Form>
           <FormGroup>
