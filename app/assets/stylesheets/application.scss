@@ -12,13 +12,22 @@
  *
  *= require_tree .
  *= require_self
+ Hex code: #FFCCE7, #DAF2DC, #81B7D2, #4D5198
+
+Nav - header - #DAF2DC
+#4D5198 - text
+#FFCCE7 - button --- button:hover - #DAF2DC
  */
 
 @import "bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import "variables";
 
-.form-control, .form-control:focus{
-    color: $blue-purple;
-    text-align: center;
+.form-control,
+.form-control:focus {
+  color: $blue-purple;
+  text-align: center;
+}
+
+h1 {
+  font-family: $header;
 }
