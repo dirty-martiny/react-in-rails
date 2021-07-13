@@ -3,16 +3,41 @@
 .your-trips-container {
   text-align: center;
   padding: 3% 0;
+  color: $blue-purple;
 
   h1.yt-header-title {
     font-family: $header;
   }
 
-  .row {
-    margin: 3% 0;
+  .yt-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
-  .yt-card {
-    justify-content: center;
+  .row {
+    padding: 2%;
+    margin: 2%;
+    box-shadow: 2px 2px 4px $light-blue;
+    border-radius: 10px;
+  }
+
+  .card,
+  .card-body {
+    border: none;
+  }
+
+  .btn {
+    background-color: $pink;
+    color: $blue-purple;
+  }
+
+  .btn:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
+
+  .card-text {
+    font-family: cursive;
   }
 }

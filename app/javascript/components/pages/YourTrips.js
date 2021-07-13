@@ -19,7 +19,7 @@ export default class YourTrips extends Component {
               return (
                 <div key={trip.id}>
                   <Row>
-                    <Col sm="6">
+                    <Col sm="15">
                       <Card body>
                         <CardTitle tag="h5">{trip.trip_name}</CardTitle>
                         <CardText>{trip.trip_location}</CardText>
