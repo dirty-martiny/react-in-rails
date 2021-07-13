@@ -118,7 +118,9 @@ export default class AboutUs extends Component {
             <div className="dream-list">
               <p>Dream List:</p>
               <ul>
-                <li>Allows users to add pictures to their sight</li>
+                <li>Allows users to add pictures to their sight</li>-{" "}
+                <li>Allow the user to select searched sight with a checkbox</li>
+                <li>User can select multiple sights</li>
               </ul>
             </div>
             <div className="technologies">
