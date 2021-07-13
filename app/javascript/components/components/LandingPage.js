@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-// import video1 from "../../../assets/videos/video1.mp4";
 
 export default class LandingPage extends Component {
   render() {
     return (
       <div className="landing-container">
-        {/* <video src="../../../assets/videos/video1.mp4" autoPlay loop muted /> */}
+        {/* <video src="../assets/video1.mp4" autoPlay loop muted /> */}
         <div className="landing-container-2">
           <h2>Travel More</h2>
           <p>
