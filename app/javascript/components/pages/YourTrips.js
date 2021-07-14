@@ -17,17 +17,15 @@ export default class YourTrips extends Component {
           {trips &&
             yourtrips.map((trip) => {
               return (
-                <div key={trip.id}>
-                  <Col sm="4">
-                    <Card body>
-                      <CardTitle tag="h5">{trip.trip_name}</CardTitle>
-                      <CardText>{trip.trip_location}</CardText>
-                      <Link to={`/trips/${trip.id}`}>
-                        <Button>More Details</Button>
-                      </Link>
-                    </Card>
-                  </Col>
-                </div>
+                <Col sm="3" key={trip.id}>
+                  <Card body>
+                    <CardTitle tag="h5">{trip.trip_name}</CardTitle>
+                    <CardText>{trip.trip_location}</CardText>
+                    <Link to={`/trips/${trip.id}`}>
+                      <Button>More Details</Button>
+                    </Link>
+                  </Card>
+                </Col>
               );
             })}
         </Row>

@@ -60,11 +60,6 @@ h6 {
   padding: 3% 0;
   color: $blue-purple;
 
-  //reacstrap class
-  .row {
-    border-radius: 10px;
-  }
-
   .card,
   .card-body {
     border: none;
@@ -73,6 +68,7 @@ h6 {
   .card {
     display: block;
     padding: 3%;
+    margin: 3%;
   }
 
   .card {
@@ -84,6 +80,7 @@ h6 {
   .card-subtitle {
     font-family: cursive;
   }
+
   .btn {
     background-color: $pink;
     color: $blue-purple;
