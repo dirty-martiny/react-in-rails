@@ -18,7 +18,11 @@ Nav - header - #DAF2DC
 #4D5198 - text
 #FFCCE7 - button --- button:hover - #DAF2DC
  */
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 @import "bootstrap";
 @import "variables";
 
@@ -27,7 +31,11 @@ Nav - header - #DAF2DC
   color: $blue-purple;
   text-align: center;
 }
-
+.form-container{
+    padding: 4%;
+    color: $blue-purple;
+}
 h1 {
   font-family: $header;
 }
+
