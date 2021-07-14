@@ -91,3 +91,13 @@ h6 {
     color: $blue-purple;
   }
 }
+
+i {
+  color: $blue-purple;
+  font-size: 2rem;
+  margin: 0 3%;
+}
+
+i:hover {
+  font-size: 2.3rem;
+}

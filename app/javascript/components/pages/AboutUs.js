@@ -37,13 +37,13 @@ export default class AboutUs extends Component {
                     </CardSubtitle>
                     <CardText>
                       <a href="https://github.com/Vivean28" target="_blank">
-                        GitHub
+                        <i class="fab fa-github-square"></i>
                       </a>
                       <a
                         href="https://www.linkedin.com/in/vivean-hanna-33b9021ab/"
                         target="_blank"
                       >
-                        LinkedIn
+                        <i class="fab fa-linkedin"></i>
                       </a>
                     </CardText>
                   </CardBody>
@@ -66,13 +66,13 @@ export default class AboutUs extends Component {
                     </CardSubtitle>
                     <CardText>
                       <a href="https://github.com/KevinBurgin" target="_blank">
-                        GitHub
+                        <i class="fab fa-github-square"></i>
                       </a>
                       <a
                         href="https://www.linkedin.com/in/kevin-burgin-683110181/"
                         target="_blank"
                       >
-                        LinkedIn
+                        <i class="fab fa-linkedin"></i>
                       </a>
                     </CardText>
                   </CardBody>
@@ -95,13 +95,13 @@ export default class AboutUs extends Component {
                     </CardSubtitle>
                     <CardText>
                       <a href="https://github.com/Shazeen15" target="_blank">
-                        GitHub
+                        <i class="fab fa-github-square"></i>
                       </a>
                       <a
                         href="https://www.linkedin.com/in/shazeen-fabius/"
                         target="_blank"
                       >
-                        LinkedIn
+                        <i class="fab fa-linkedin"></i>
                       </a>
                     </CardText>
                   </CardBody>
@@ -119,7 +119,7 @@ export default class AboutUs extends Component {
                     <CardText>
                       Vivean is a full stack developer with strong communication
                       skills with 17 years of experience of running and managing
-                      my business. As the project manager, she enjoyed working
+                      her business. As the project manager, she enjoyed working
                       with her group to find solutions.
                     </CardText>
                   </Card>
