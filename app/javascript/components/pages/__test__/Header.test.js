@@ -22,6 +22,11 @@ describe('When Header loads', () => {
             sign_in_route="sign_in_route"
             sign_out_route="sign_out_route"/>);
         const nav = header.find('NavItem');
-        expect(nav.length).toEqual(4);
+        expect(nav.length).toEqual(5);
+        let navLinks = ['Home', 'Your Trips', 'New Trip', 'About Us', 'Sign Out']
+        navLinks.map((text) => {
+            const element = nav.findWhere((node) => node.text( ) === text)
+            expect(element.exists()).toEqual(true)
+        })
     })
   })
