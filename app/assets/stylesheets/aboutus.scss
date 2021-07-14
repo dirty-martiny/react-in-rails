@@ -15,15 +15,17 @@
     width: 40%;
   }
 
-  hr.style-five {
-    border: 0;
-    height: 0;
-    margin: 1% 5% 4%;
-    box-shadow: 0 0 5px 10px $light-blue;
-  }
-
-  hr.style-five:after {
-    content: "\00a0";
+  hr {
+    &.style-five {
+      border: 0;
+      height: 0;
+      margin: 1% 5% 4%;
+      box-shadow: 0 0 5px 10px $light-blue;
+    }
+  
+    &.style-five:after {
+      content: "\00a0";
+    }
   }
 
   .dream-list,
