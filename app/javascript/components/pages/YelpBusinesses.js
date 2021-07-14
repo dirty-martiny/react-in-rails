@@ -12,7 +12,6 @@ import {
 export default class YelpBusinesses extends Component {
   render() {
     const { businesses } = this.props;
-    console.log(businesses)
     return (
       <div className="yelp-businesses-container">
         <h2 className="yb-header-title">Results</h2>
