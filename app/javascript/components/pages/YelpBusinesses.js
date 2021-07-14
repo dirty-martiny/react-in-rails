@@ -12,6 +12,7 @@ import {
 export default class YelpBusinesses extends Component {
   render() {
     const { businesses } = this.props;
+    console.log(businesses)
     return (
       <div className="yelp-businesses-container">
         <h2 className="yb-header-title">Results</h2>
@@ -31,7 +32,7 @@ export default class YelpBusinesses extends Component {
                   <CardBody>
                     <CardTitle tag="h5">{business.name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">
-                      {business.location.phone}
+                      {business.phone}
                     </CardSubtitle>
                     <CardText>
                       <span>
