@@ -3,7 +3,26 @@
     h1{
       text-align: center;
     }
-    Button{
-      
+    .card{
+      padding: 1rem;
+      box-shadow: 2px 2px $light-blue;
+      margin: 1rem;
+    }
+    .btn-secondary{
+        box-shadow: 1px 1px;
+        text-decoration: none;
+        background-color: $pink;
+        padding: 10px;
+        border-radius: 8px;
+        color: $blue-purple;
+        margin: 3%;
+        border: none;
+    }
+    .btn-secondary:hover{
+        background-color: $green;
+        color: $blue-purple;
+    }
+    .text-for-check{
+        padding: 1%;
     }
 }
