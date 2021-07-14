@@ -1,22 +1,5 @@
 @import "variables";
 
-.sight-new-main {
-  width: 50%;
-  margin: 3%;
-  text-align: center;
-  color: $blue-purple;
-
-  h1 {
-    font-family: $header;
-  }
-
-  .button-style {
-    background-color: $pink;
-    color: $blue-purple;
-  }
-
-  .button-style:hover {
-    background-color: $green;
-    color: $blue-purple;
-  }
+.sight-new-containter {
+  margin: 3% !important;
 }
