@@ -1,18 +1,5 @@
 @import "variables";
 
 .yelp-search-container {
-  width: 50%;
-  margin: 3%;
-  text-align: center;
-  color: $blue-purple;
-
-  .button-style {
-    background-color: $pink;
-    color: $blue-purple;
-  }
-
-  .button-style:hover {
-    background-color: $green;
-    color: $blue-purple;
-  }
+  margin: 3% !important;
 }
