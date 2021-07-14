@@ -11,23 +11,26 @@ export default class Dash extends Component {
         return trip.is_public;
       });
     return (
-      <div>
+      <div className="main-card-container">
         <div>
           <h1>Welcome {`${user.email}`}</h1>
-          <Link to="/yourtrips">Your Trips</Link>
+          <Button>
+            <Link to="/yourtrips">Your Trips</Link>
+          </Button>
         </div>
         <Row>
           {trips &&
             publicTrips.map((trip) => {
               return (
-                <div key={trip.id}>
-                  <h2>{trip.trip_name}</h2>
-                  <p>{trip.trip_location}</p>
-
-                  <Link to={`/trips/${trip.id}`}>
-                    <Button>More Details</Button>
-                  </Link>
-                </div>
+                <Col sm="3" key={trip.id}>
+                  <Card body>
+                    <CardTitle tag="h5">{trip.trip_name}</CardTitle>
+                    <CardText>{trip.trip_location}</CardText>
+                    <Link to={`/trips/${trip.id}`}>
+                      <Button>More Details</Button>
+                    </Link>
+                  </Card>
+                </Col>
               );
             })}
         </Row>
