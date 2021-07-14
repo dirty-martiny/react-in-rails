@@ -33,12 +33,12 @@ export class SightNew extends Component {
 
   render() {
     return (
-      <div className="sight-new-main">
+      <div className="form-container sight-new-containter">
         <h1>Add A New Sight</h1>
-        <Form >
+        <Form>
           <FormGroup>
             <Label for="name">Name of Sight</Label>
-            <Input 
+            <Input
               type="text"
               name="name"
               onChange={this.handleChange}
@@ -106,11 +106,7 @@ export class SightNew extends Component {
             />
           </FormGroup>
           <br />
-          <Button
-            className="button-style"
-            name="submit"
-            onClick={this.handleSubmit}
-          >
+          <Button name="submit" onClick={this.handleSubmit}>
             Add To Trip
           </Button>
         </Form>

@@ -33,8 +33,8 @@ export class SightEdit extends Component {
 
   render() {
     return (
-      <div className="sight-edit-main">
-        <h1>Sight Edit Page</h1>
+      <div className="sight-edit-container form-container ">
+        <h1>Edit Your Sight</h1>
         <Form>
           <FormGroup>
             <Label for="name">Sight's Name</Label>
@@ -106,11 +106,7 @@ export class SightEdit extends Component {
             />
           </FormGroup>
           <br />
-          <Button
-            className="button-style"
-            name="submit"
-            onClick={this.handleSubmit}
-          >
+          <Button name="submit" onClick={this.handleSubmit}>
             Edit Sight
           </Button>
         </Form>
