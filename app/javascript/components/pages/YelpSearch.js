@@ -27,7 +27,7 @@ export default class YelpSearch extends Component {
   render() {
     const { sightSearch, businesses } = this.props;
     return (
-      <div className="yelp-search-container">
+      <div className="yelp-search-container form-container ">
         <h1>Search For Sights Near You</h1>
         <Form>
           <FormGroup>
@@ -57,7 +57,6 @@ export default class YelpSearch extends Component {
           </FormGroup>
           <br />
           <Button
-            className="button-style"
             name="submit"
             onClick={() => {
               sightSearch(this.state.form.item, this.state.form.location);

@@ -1,39 +1,39 @@
 @import "variables";
 
 .footer-main {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: $green;
-    padding: .3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $green;
+  padding: 0.3rem;
 
-    .footer-link{
-        margin-right: 3rem;
-        color: $blue-purple;
-        text-decoration: none;
-    }
+  .footer-link {
+    margin-right: 3rem;
+    color: $blue-purple;
+    text-decoration: none;
+  }
 
-    a{
-        padding: 0.5rem;
-    }
+  a {
+    padding: 0.5rem;
+  }
 
-    .footer-link:hover{
-        background-color: $seeThroughPink;
-        border-radius: 10px;
-        color: $blue-purple !important;
-        font-family: $header;
-        font-weight: 100;
-    }
+  .footer-link:hover {
+    background-color: $seeThroughPink;
+    border-radius: 10px;
+    color: $blue-purple !important;
+    font-family: $header;
+    font-weight: 100;
+  }
 
-    .footer-home-link{
-        font-size: 20px;
-        font-family: $header;
-        color:$blue-purple;
-        text-decoration: none;
-        margin-left: 3rem;
-    }
+  .footer-home-link {
+    font-size: 20px;
+    font-family: $header;
+    color: $blue-purple;
+    text-decoration: none;
+    margin-left: 3rem;
+  }
 
-    .footer-home-link:hover{
-        color: $pink;
-    }
+  .footer-home-link:hover {
+    color: $pink;
+  }
 }

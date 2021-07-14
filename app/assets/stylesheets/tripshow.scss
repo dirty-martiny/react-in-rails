@@ -1,81 +1,85 @@
-@import "variables"; 
-.tripshow-container{
-    color: $blue-purple;
-    padding: 4.375rem;
-    text-align: center;
-  h1{
-    font-family: $header;
-  }
-  .text-right{
-      box-shadow: 2px 2px $light-blue;
-      margin: 3%;
-  }
-  .edit-btn{
-    box-shadow: 1px 1px;
-    text-decoration: none;
-    background-color: $green;
-    padding: 10px;
-    border-radius: 8px;
-    color: $blue-purple;
-    margin: 3%;
-     border: none;
-  }
-  .edit-btn:hover{
-    background-color: $pink;
-    color: $blue-purple;
-  }
-  .delete-btn{
-    box-shadow: 1px 1px;
-    text-decoration: none;
-    background-color: $pink;
-    padding: 10px;
-    border-radius: 8px;
-    color: $blue-purple;
-    margin: 3%;
-    border: none;
-  }
-  .delete-btn:hover{
-    background-color: $green;
-    color: $blue-purple;
+@import "variables";
+.trip-show-container {
+  .card {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
   }
 
-  .ts-btn{
-    box-shadow: 1px 1px;
-    background-color:  $pink;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    margin: 3%;
-    color: $blue-purple;
-    a{
-     text-decoration: none;
-     color: $blue-purple;
+  .ts-info {
+    margin: 3% 0 !important;
+  }
+
+  .edit-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $green !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
+  }
+
+  .edit-btn:hover {
+    background-color: $pink !important;
+    color: $blue-purple !important;
+  }
+
+  .delete-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $pink !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
+  }
+
+  .delete-btn:hover {
+    background-color: $green !important;
+    color: $blue-purple !important;
+  }
+
+  .ts-btn {
+    box-shadow: 1px 1px !important;
+    background-color: $pink !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    margin: 3% !important;
+    color: $blue-purple !important;
+
+    a {
+      text-decoration: none !important;
+      color: $blue-purple !important;
     }
-    
   }
-  .ts-btn:hover{
-    background-color: $green;
-    color: $blue-purple;
+
+  .ts-btn:hover {
+    background-color: $green !important;
+    color: $blue-purple !important;
   }
-  .bottom-btn{
-     
-      margin: 3%;
-      padding: 2%;
+
+  .bottom-btn {
+    margin: 3% !important;
+    padding: 2% !important;
   }
-  .btd-btn{
-    box-shadow: 1px 1px;
-    text-decoration: none;
-    background-color: $green;
-    padding: 10px;
-    border-radius: 8px;
-    color: $blue-purple;
-    margin: 3%;
-    border: none;
-    
+
+  .btd-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $green !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
   }
-  .btd-btn:hover{
-    background-color: $pink;
-    color: $blue-purple;
+
+  .btd-btn:hover {
+    background-color: $pink !important;
+    color: $blue-purple !important;
   }
 }
-
