@@ -11,7 +11,7 @@ export default class YourTrips extends Component {
         return trip.user_id === user.id;
       });
     return (
-      <div className="main-card-container your-trips-container">
+      <div className="main-card-container">
         <h2>Your Trips</h2>
         <Row>
           {trips &&
