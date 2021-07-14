@@ -18,16 +18,75 @@ Nav - header - #DAF2DC
 #4D5198 - text
 #FFCCE7 - button --- button:hover - #DAF2DC
  */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @import "bootstrap";
 @import "variables";
 
-.form-control,
-.form-control:focus {
-  color: $blue-purple;
-  text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header;
 }
 
-h1 {
-  font-family: $header;
+.form-container {
+  width: 50%;
+  text-align: center;
+  color: $blue-purple;
+  margin: 0 auto;
+
+  .form-control,
+  .form-control:focus {
+    color: $blue-purple;
+    text-align: center;
+  }
+
+  .btn {
+    background-color: $pink;
+    color: $blue-purple;
+    border: none;
+  }
+
+  .btn:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
+}
+
+.main-card-container {
+  text-align: center;
+  padding: 3% 0;
+  color: $blue-purple;
+
+  .card,
+  .card-body {
+    border: none;
+  }
+
+  .card {
+    display: block;
+    padding: 3%;
+    margin: 3%;
+    box-shadow: 2px 2px 4px $light-blue;
+  }
+
+  .card-subtitle {
+    font-family: cursive;
+  }
+
+  .btn {
+    background-color: $pink;
+    color: $blue-purple;
+  }
+
+  .btn:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
 }

@@ -1,44 +1,85 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.trip-show-main {
-  h1 {
-    text-align: center;
-  }
-
-  .trip-show-card {
-    width: 80%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-width: 10px;
-  }
-
-  .sight-show-card {
-    display: flex;
+@import "variables";
+.trip-show-container {
+  .card {
+    display: flex !important;
     flex-direction: row;
-    row-gap: 2rem;
-    // border-radius: 10%;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
   }
 
-  .trip-buttons-main {
-    display: flex;
-    justify-content: space-evenly;
-    // background-color: #FFCCE7;
+  .ts-info {
+    margin: 3% 0 !important;
   }
 
-  #button {
-    background-color: #daf2dc;
-    border: 2rem;
+  .edit-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $green !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
   }
 
-  #sight-button {
-    background-color: #daf2dc;
+  .edit-btn:hover {
+    background-color: $pink !important;
+    color: $blue-purple !important;
+  }
+
+  .delete-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $pink !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
+  }
+
+  .delete-btn:hover {
+    background-color: $green !important;
+    color: $blue-purple !important;
+  }
+
+  .ts-btn {
+    box-shadow: 1px 1px !important;
+    background-color: $pink !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    margin: 3% !important;
+    color: $blue-purple !important;
+
+    a {
+      text-decoration: none !important;
+      color: $blue-purple !important;
+    }
+  }
+
+  .ts-btn:hover {
+    background-color: $green !important;
+    color: $blue-purple !important;
+  }
+
+  .bottom-btn {
+    margin: 3% !important;
+    padding: 2% !important;
+  }
+
+  .btd-btn {
+    box-shadow: 1px 1px !important;
+    text-decoration: none !important;
+    background-color: $green !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    color: $blue-purple !important;
+    margin: 3% !important;
+    border: none !important;
+  }
+
+  .btd-btn:hover {
+    background-color: $pink !important;
+    color: $blue-purple !important;
   }
 }
