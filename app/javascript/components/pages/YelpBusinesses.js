@@ -31,7 +31,7 @@ export default class YelpBusinesses extends Component {
                   <CardBody>
                     <CardTitle tag="h5">{business.name}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">
-                      {business.location.phone}
+                      {business.phone}
                     </CardSubtitle>
                     <CardText>
                       <span>

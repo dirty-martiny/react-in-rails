@@ -20,6 +20,6 @@ describe('When SightEdit renders', () => {
     it('displays a heading', () => {
         const renderedSightEdit = shallow(<SightEdit sight= { mockSight } />)
         const renderedSightEditHeader = renderedSightEdit.find("h1")
-        expect(renderedSightEditHeader.text()).toEqual("Sight Edit Page")       
+        expect(renderedSightEditHeader.text()).toEqual("Edit Your Sight")       
     })
 })
