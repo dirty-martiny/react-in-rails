@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, Label, Card} from "reactstrap";
+import { Button, Form, FormGroup, Input, Label, Card } from "reactstrap";
 import { Redirect } from "react-router-dom";
 
 export class TripEdit extends Component {
@@ -64,7 +64,9 @@ export class TripEdit extends Component {
             </FormGroup>
             <br />
             <FormGroup>
-              <Label className="text-for-check">Check here to show your trip to friends</Label>
+              <Label className="text-for-check">
+                Check here to show your trip to friends
+              </Label>
               <Input
                 type="checkbox"
                 name="is_public"
