@@ -113,38 +113,56 @@ export default class AboutUs extends Component {
           <div>
             <div className="about-devs">
               <h5>About The Developers</h5>
-              <p>
-                Vivean is a full stack developer that has love for creating and
-                being a part of something that adds value. Strong communication
-                skills with 17 years of experience of running and managing my
-                business financial and the all books and able to solve problems
-                and the to focus on the big picture. Positive out look on every
-                situation and the love to work on improving everyday myself and
-                my knowledge.
-              </p>
-              <p>
-                Kevin is a full stack developer backed with ten years of strong
-                communication and team building skills, developed through the
-                food service industry. As the design lead Kevin focused on the
-                user experience and the overall UI and UX design.
-              </p>
-              <p>
-                Shazeen is a full stack developer with strong one-on-one skills
-                gained by having a Master's in Clinical Counseling. As the tech
-                lead, I focus a lot on clean and functionable code.
-              </p>
+              <Row>
+                <Col sm="4">
+                  <Card body>
+                    <CardText>
+                      Vivean is a full stack developer that has love for
+                      creating and being a part of something that adds value.
+                      Strong communication skills with 17 years of experience of
+                      running and managing my business financial and the all
+                      books and able to solve problems and the to focus on the
+                      big picture. Positive out look on every situation and the
+                      love to work on improving everyday myself and my
+                      knowledge.
+                    </CardText>
+                  </Card>
+                </Col>
+                <Col sm="4">
+                  <Card body>
+                    <CardText>
+                      Kevin is a full stack developer backed with ten years of
+                      strong communication and team building skills, developed
+                      through the food service industry. As the design lead
+                      Kevin focused on the user experience and the overall UI
+                      and UX design.
+                    </CardText>
+                  </Card>
+                </Col>
+
+                <Col sm="4">
+                  <Card body>
+                    <CardText>
+                      Shazeen is a full stack developer with strong one-on-one
+                      skills gained by having a Master's in Clinical Counseling.
+                      As the tech lead, I focus a lot on clean and functionable
+                      code.
+                    </CardText>
+                  </Card>
+                </Col>
+              </Row>
             </div>
             <div className="dream-list">
               <h5>Dream List:</h5>
-              <ul>
-                <li>Allows users to add pictures to their sight</li>-{" "}
+              <ul className="ul-dream-list">
+                <li>Allows users to add pictures to their sight</li>
                 <li>Allow the user to select searched sight with a checkbox</li>
                 <li>User can select multiple sights</li>
               </ul>
             </div>
             <div className="technologies">
-              <p>Technologies:</p>
-              <ul>
+              <h5>Technologies:</h5>
+              <ul className="tech-dream-list">
                 <li>React</li>
                 <li>Rails</li>
                 <li>Sass</li>

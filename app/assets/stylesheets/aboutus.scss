@@ -15,6 +15,32 @@
     width: 40%;
   }
 
+  .dream-list,
+  .technologies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    li {
+      list-style: none;
+    }
+  }
+
+  .about-devs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ul-dream-list,
+  .tech-dream-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   //reacstrap class
   .row {
     padding: 2%;
