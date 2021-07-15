@@ -2,11 +2,8 @@ import React from "react";
 import Enzyme, { shallow, render } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { StaticRouter as Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
 
 import YourTrips from "../YourTrips";
-
-const history = createMemoryHistory();
 
 Enzyme.configure({ adapter: new Adapter() });
 
