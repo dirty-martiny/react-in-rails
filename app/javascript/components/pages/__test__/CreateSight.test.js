@@ -6,11 +6,13 @@ import CreateSight from "../CreateSight";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("When create sight renders", () => {
-  it("render the sight new components", () => {
+  it("render the 2 components", () => {
     const createSight = shallow(<CreateSight />);
 
-    const sightNewComponent = createSight.find("SightNew");
+    const sightNew = createSight.find("SightNew");
+    const yelpSearch = createSight.find("YelpSearch");
 
-    expect(sightNewComponent.length).toEqual(1);
+    expect(sightNew.length).toEqual(1);
+    expect(yelpSearch.length).toEqual(1);
   });
 });
