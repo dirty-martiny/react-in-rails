@@ -80,7 +80,7 @@ export class TripEdit extends Component {
             </Button>
           </Form>
         </Card>
-        {this.state.submitted && <Redirect to="/tripsindex" />}
+        {this.state.submitted && <Redirect to="/yourtrips" />}
       </div>
     );
   }
