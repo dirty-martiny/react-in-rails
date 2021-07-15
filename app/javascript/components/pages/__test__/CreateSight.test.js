@@ -6,7 +6,7 @@ import CreateSight from "../CreateSight";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("When create sight renders", () => {
-  it("render the sight new components", () => {
+  it("render the 2 components", () => {
     const createSight = shallow(<CreateSight />);
 
     const sightNew = createSight.find("SightNew");
