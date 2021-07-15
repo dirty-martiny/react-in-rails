@@ -1,18 +1,27 @@
 import React from 'react'
-import Enzyme, { shallow } from 'enzyme'
+import Enzyme, { shallow, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import TripIndex from '../TripIndex'
+import { StaticRouter as Router } from "react-router-dom";
+import TripIndex from '../TripIndex';
 
-Enzyme.configure({ adapter: new Adapter()})
+Enzyme.configure({ adapter: new Adapter()});
 
 describe('When TripIndex renders', () => {
-    const mockTrip = {
+    const mockuser = {
+        id: 1,
+        email: "email@email.com",
+        password: "123123",
+        password_confirmation: "123123",
+      };
+
+    const mockTrip = [
+        {
         id: 1,
         trip_name: "Getting some sun",
         trip_location: "Jamaica",
         trip_date_range: "12/20/2021 - 1/5/2022",
-        is_public: false,
-        user_id: 1,
+        is_public: true,
+        user_id: mockuser.id,
         sights: [
           {
             name: "Taco Bell",
@@ -25,19 +34,21 @@ describe('When TripIndex renders', () => {
             trip_id: 1,
           },
         ],
-      };
+      }];
       
-      const renderedTripIndex = shallow(<TripIndex trip= { mockTrip }/>);
+      const tripIndex = render(
+        <Router>
+          <TripIndex trips={mockTrip} />
+        </Router>
+      );
 
     it('displays a heading', () => {
-        const renderedTripIndexHeader = renderedTripIndex.find("h1")
+        const renderedTripIndexHeader = tripIndex.find("h1")
         expect(renderedTripIndexHeader.text()).toEqual("TripIndex")       
     })
 
-    it('displays a trip name', () => {
-        const tripIndexCard = renderedTripIndex.find('h5');
-        // expect(tripIndexCard.length).toEqual(1);
-
-        expect(tripIndexCard.text()).toEqual("Getting some sun");
-    })
+    it("displays trips' name", () => {
+        const tripName = tripIndex.find("h5");
+        expect(tripName.text()).toEqual("Getting some sun");
+      });
 })
