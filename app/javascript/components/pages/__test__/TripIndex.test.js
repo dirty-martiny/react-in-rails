@@ -7,6 +7,7 @@ Enzyme.configure({ adapter: new Adapter()})
 
 describe('When TripIndex renders', () => {
     const mockTrip = {
+        id: 1,
         trip_name: "Getting some sun",
         trip_location: "Jamaica",
         trip_date_range: "12/20/2021 - 1/5/2022",
@@ -25,17 +26,18 @@ describe('When TripIndex renders', () => {
           },
         ],
       };
+      
+      const renderedTripIndex = shallow(<TripIndex trip= { mockTrip }/>);
 
     it('displays a heading', () => {
-        const renderedTripIndex = shallow(<TripIndex trip= { mockTrip } />)
         const renderedTripIndexHeader = renderedTripIndex.find("h1")
         expect(renderedTripIndexHeader.text()).toEqual("TripIndex")       
     })
 
-    it('displays a trip_name', () => {
-        const renderedTripIndex = shallow(<TripIndex trip= { mockTrip }/>);
-        const renderedTripIndexCard = renderedTripIndex.find('CardTitle');
-        expect(renderedTripIndexCard.length).toEqual(1);
-        expect(renderedTripIndexCard.text()).toEqual("Getting some sun");
+    it('displays a trip name', () => {
+        const tripIndexCard = renderedTripIndex.find('h5');
+        // expect(tripIndexCard.length).toEqual(1);
+
+        expect(tripIndexCard.text()).toEqual("Getting some sun");
     })
 })
