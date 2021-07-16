@@ -27,12 +27,12 @@ describe("When sightNew renders", () => {
     ],
   };
 
-  //   const sightNew = shallow(<SightNew trip={mockTrip} />);
-  const sightNew = render(
-    <Router>
-      <SightNew trip={mockTrip} />
-    </Router>
-  );
+  const sightNew = shallow(<SightNew trip={mockTrip} />);
+  //   const sightNew = render(
+  //     <Router>
+  //       <SightNew trip={mockTrip} />
+  //     </Router>
+  //   );
 
   it("displays a heading", () => {
     const title = sightNew.find("h1");
@@ -42,18 +42,31 @@ describe("When sightNew renders", () => {
   it("displays 7 labels", () => {
     const labels = sightNew.find("Label");
     expect(labels.length).toEqual(7);
-    expect(labels.html()).toEqual("Name of Sight");
-    console.log(labels);
+    expect(labels.debug().includes("Name of Sight")).toEqual(true);
+    expect(labels.debug().includes("Street Address")).toEqual(true);
+    expect(labels.debug().includes("City")).toEqual(true);
+    expect(labels.debug().includes("Zipcode")).toEqual(true);
+    expect(labels.debug().includes("State")).toEqual(true);
+    expect(labels.debug().includes("Country")).toEqual(true);
+    expect(labels.debug().includes("Phone Number")).toEqual(true);
   });
 
   it("displays 7 inputs", () => {
     const inputs = sightNew.find("Input");
     expect(inputs.length).toEqual(7);
+    expect(inputs.debug().includes("name")).toEqual(true);
+    expect(inputs.debug().includes("address1")).toEqual(true);
+    expect(inputs.debug().includes("city")).toEqual(true);
+    expect(inputs.debug().includes("zip_code")).toEqual(true);
+    expect(inputs.debug().includes("state")).toEqual(true);
+    expect(inputs.debug().includes("country")).toEqual(true);
+    expect(inputs.debug().includes("phone")).toEqual(true);
   });
 
   it("displays a button that says edit sight", () => {
     const button = sightNew.find("Button");
     expect(button.length).toEqual(1);
-    // expect(button.props().children).toEqual("Add To Trip");
+    expect(button.props().children).toEqual("Add To Trip");
+    expect(button.debug().includes("submit")).toEqual(true);
   });
 });
