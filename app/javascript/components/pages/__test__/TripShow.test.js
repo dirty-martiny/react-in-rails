@@ -51,9 +51,10 @@ describe("When TripShow renders", () => {
       const tripName = tripShow.find("h6");
       expect(tripName.text()).toEqual("222-222-2222");
     });
-    // it("displays a delete button", () => {
-    //   const button = tripShow.find("Button");
-    //   expect(button.length).toEqual(1);
-    //   expect(button.props().children).toEqual("Edit");
-    // });
+    it("displays 6 buttons", () => {
+      const button = tripShow.find("Button");
+      console.log(button)
+      expect(button.length).toEqual(6);
+      // expect(button.props().children).toEqual("Edit");
+    });
 });
