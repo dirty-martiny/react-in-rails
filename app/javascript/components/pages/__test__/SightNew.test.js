@@ -28,11 +28,6 @@ describe("When sightNew renders", () => {
   };
 
   const sightNew = shallow(<SightNew trip={mockTrip} />);
-  //   const sightNew = render(
-  //     <Router>
-  //       <SightNew trip={mockTrip} />
-  //     </Router>
-  //   );
 
   it("displays a heading", () => {
     const title = sightNew.find("h1");
