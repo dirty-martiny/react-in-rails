@@ -13,4 +13,20 @@ describe("When AboutUs renders", () => {
 
     expect(aboutUsHeading.text()).toEqual("About Us");
   });
+
+  it("displays three cardtitles", () => {
+    const aboutUs = shallow(<AboutUs/>);
+
+    const aboutUsCardTitle = aboutUs.find("h5");
+
+    expect(aboutUsCardTitle.length).toEqual(3);
+  })
+
+  it("displays three cardtexts", () => {
+    const aboutUs = shallow(<AboutUs/>);
+
+    const aboutUsCardText = aboutUs.find("CardText");
+
+    expect(aboutUsCardText.length).toEqual(3);
+  })
 });
