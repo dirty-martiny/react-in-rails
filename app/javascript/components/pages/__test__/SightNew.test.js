@@ -37,31 +37,31 @@ describe("When sightNew renders", () => {
   it("displays 7 labels", () => {
     const labels = sightNew.find("Label");
     expect(labels.length).toEqual(7);
-    expect(labels.debug().includes("Name of Sight")).toEqual(true);
-    expect(labels.debug().includes("Street Address")).toEqual(true);
-    expect(labels.debug().includes("City")).toEqual(true);
-    expect(labels.debug().includes("Zipcode")).toEqual(true);
-    expect(labels.debug().includes("State")).toEqual(true);
-    expect(labels.debug().includes("Country")).toEqual(true);
-    expect(labels.debug().includes("Phone Number")).toEqual(true);
+    expect(labels.debug().includes("Name of Sight")).toBeTruthy;
+    expect(labels.debug().includes("Street Address")).toBeTruthy;
+    expect(labels.debug().includes("City")).toBeTruthy;
+    expect(labels.debug().includes("Zipcode")).toBeTruthy;
+    expect(labels.debug().includes("State")).toBeTruthy;
+    expect(labels.debug().includes("Country")).toBeTruthy;
+    expect(labels.debug().includes("Phone Number")).toBeTruthy;
   });
 
   it("displays 7 inputs", () => {
     const inputs = sightNew.find("Input");
     expect(inputs.length).toEqual(7);
-    expect(inputs.debug().includes("name")).toEqual(true);
-    expect(inputs.debug().includes("address1")).toEqual(true);
-    expect(inputs.debug().includes("city")).toEqual(true);
-    expect(inputs.debug().includes("zip_code")).toEqual(true);
-    expect(inputs.debug().includes("state")).toEqual(true);
-    expect(inputs.debug().includes("country")).toEqual(true);
-    expect(inputs.debug().includes("phone")).toEqual(true);
+    expect(inputs.debug().includes("name")).toBeTruthy;
+    expect(inputs.debug().includes("address1")).toBeTruthy;
+    expect(inputs.debug().includes("city")).toBeTruthy;
+    expect(inputs.debug().includes("zip_code")).toBeTruthy;
+    expect(inputs.debug().includes("state")).toBeTruthy;
+    expect(inputs.debug().includes("country")).toBeTruthy;
+    expect(inputs.debug().includes("phone")).toBeTruthy;
   });
 
   it("displays a button that says edit sight", () => {
     const button = sightNew.find("Button");
     expect(button.length).toEqual(1);
     expect(button.props().children).toEqual("Add To Trip");
-    expect(button.debug().includes("submit")).toEqual(true);
+    expect(button.debug().includes("submit")).toBeTruthy;
   });
 });
