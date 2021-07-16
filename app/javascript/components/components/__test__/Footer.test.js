@@ -6,7 +6,7 @@ import Footer from "../Footer";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("When footer renders", () => {
-  it("displays a link to home '/'", () => {
+  it("displays a link to home '/' and aboutus '/about'", () => {
     const footer = shallow(<Footer />);
     const footerlinks = footer.find("NavLink");
     expect(footerlinks.length).toEqual(2);
