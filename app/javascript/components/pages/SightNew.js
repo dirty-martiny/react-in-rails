@@ -32,6 +32,8 @@ export class SightNew extends Component {
   };
 
   render() {
+    const newSight = {...this.state.form, ...this.props.newSight}
+    console.log("newSight", newSight)
     return (
       <div className="form-container sight-new-containter">
         <h1>Add A New Sight</h1>
@@ -42,7 +44,7 @@ export class SightNew extends Component {
               type="text"
               name="name"
               onChange={this.handleChange}
-              value={this.state.form.name}
+              value={newSight.name}
             />
           </FormGroup>
           <br />
@@ -52,7 +54,7 @@ export class SightNew extends Component {
               type="text"
               name="address1"
               onChange={this.handleChange}
-              value={this.state.form.address1}
+              // value={newSight.location.address1}
             />
           </FormGroup>
           <br />
@@ -62,7 +64,7 @@ export class SightNew extends Component {
               type="text"
               name="city"
               onChange={this.handleChange}
-              value={this.state.form.city}
+              // value={newSight.location.city}
             />
           </FormGroup>
           <br />
@@ -72,7 +74,7 @@ export class SightNew extends Component {
               type="text"
               name="zip_code"
               onChange={this.handleChange}
-              value={this.state.form.zip_code}
+              // value={newSight.location.zip_code}
             />
           </FormGroup>
           <br />
@@ -82,7 +84,7 @@ export class SightNew extends Component {
               type="text"
               name="state"
               onChange={this.handleChange}
-              value={this.state.form.state}
+              // value={newSight.location.state}
             />
           </FormGroup>
           <br />
@@ -92,7 +94,7 @@ export class SightNew extends Component {
               type="text"
               name="country"
               onChange={this.handleChange}
-              value={this.state.form.country}
+              // value={newSight.location.country}
             />
           </FormGroup>
           <br />
@@ -102,7 +104,7 @@ export class SightNew extends Component {
               type="text"
               name="phone"
               onChange={this.handleChange}
-              value={this.state.form.phone}
+              value={newSight.phone}
             />
           </FormGroup>
           <br />
