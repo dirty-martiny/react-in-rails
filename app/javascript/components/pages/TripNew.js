@@ -63,7 +63,7 @@ export default class TripNew extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label className="text-for-check"> Is public</Label>
+              <Label className="text-for-check">Is public</Label>
               <Input
                 type="checkbox"
                 name="is_public"
