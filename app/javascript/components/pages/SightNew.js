@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Button, Form, FormGroup, Input, Label,  } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export class SightNew extends Component {
   constructor(props) {
@@ -32,8 +32,6 @@ export class SightNew extends Component {
   };
 
   render() {
-    const newSight = {...this.state.form, ...this.props.newSight}
-    console.log("newSight", newSight)
     return (
       <div className="form-container sight-new-containter">
         <h1>Add A New Sight</h1>
@@ -44,7 +42,7 @@ export class SightNew extends Component {
               type="text"
               name="name"
               onChange={this.handleChange}
-              value={newSight.name}
+              value={this.state.form.name}
             />
           </FormGroup>
           <br />
@@ -54,7 +52,7 @@ export class SightNew extends Component {
               type="text"
               name="address1"
               onChange={this.handleChange}
-              // value={newSight.location.address1}
+              value={this.state.form.address1}
             />
           </FormGroup>
           <br />
@@ -64,7 +62,7 @@ export class SightNew extends Component {
               type="text"
               name="city"
               onChange={this.handleChange}
-              // value={newSight.location.city}
+              value={this.state.form.city}
             />
           </FormGroup>
           <br />
@@ -74,7 +72,7 @@ export class SightNew extends Component {
               type="text"
               name="zip_code"
               onChange={this.handleChange}
-              // value={newSight.location.zip_code}
+              value={this.state.form.zip_code}
             />
           </FormGroup>
           <br />
@@ -84,7 +82,7 @@ export class SightNew extends Component {
               type="text"
               name="state"
               onChange={this.handleChange}
-              // value={newSight.location.state}
+              value={this.state.form.state}
             />
           </FormGroup>
           <br />
@@ -94,7 +92,7 @@ export class SightNew extends Component {
               type="text"
               name="country"
               onChange={this.handleChange}
-              // value={newSight.location.country}
+              value={this.state.form.country}
             />
           </FormGroup>
           <br />
@@ -104,7 +102,7 @@ export class SightNew extends Component {
               type="text"
               name="phone"
               onChange={this.handleChange}
-              value={newSight.phone}
+              value={this.state.form.phone}
             />
           </FormGroup>
           <br />

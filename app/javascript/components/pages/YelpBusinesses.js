@@ -6,12 +6,11 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
 } from "reactstrap";
 
 export default class YelpBusinesses extends Component {
   render() {
-    const { businesses, handleSetNewSight } = this.props;
+    const { businesses } = this.props;
     return (
       <div className="yelp-businesses-container">
         <h2 className="yb-header-title">Results</h2>
@@ -19,7 +18,7 @@ export default class YelpBusinesses extends Component {
           businesses.map((business) => {
             return (
               <div key={business.id} className="yelp-businesses">
-                <Card onClick={() => handleSetNewSight(business)}>
+                <Card>
                   {business.image_url && (
                     <CardImg
                       top
