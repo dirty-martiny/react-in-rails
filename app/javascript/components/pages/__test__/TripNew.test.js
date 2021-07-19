@@ -28,7 +28,7 @@ describe("When tripNew renders", () => {
       "Trip Name",
       "Trip Location",
       "Trip date range",
-      "Is public",
+      "Check to show your trip to everyone",
     ];
 
     expect(labels.length).toEqual(4);
