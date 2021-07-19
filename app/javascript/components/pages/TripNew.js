@@ -33,50 +33,49 @@ export default class TripNew extends Component {
     return (
       <div className="form-container">
         <h1>Add a Trip</h1>
-        <Card>
-          <Form>
-            <FormGroup>
-              <Label>Trip Name</Label>
-              <Input
-                type="text"
-                name="trip_name"
-                onChange={this.handleChange}
-                value={this.state.form.trip_name}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label>Trip Location</Label>
-              <Input
-                type="text"
-                name="trip_location"
-                onChange={this.handleChange}
-                value={this.state.form.trip_location}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label>Trip date range</Label>
-              <Input
-                type="text"
-                name="trip_date_range"
-                onChange={this.handleChange}
-                value={this.state.form.trip_date_range}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label className="text-for-check">Is public</Label>
-              <Input
-                type="checkbox"
-                name="is_public"
-                checked={this.state.form.is_public}
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-
-            <Button name="submit" color="secondary" onClick={this.handleSubmit}>
-              Add a New Trip
-            </Button>
-          </Form>
-        </Card>
+        <Form>
+          <FormGroup>
+            <Label>Trip Name</Label>
+            <Input
+              type="text"
+              name="trip_name"
+              onChange={this.handleChange}
+              value={this.state.form.trip_name}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Trip Location</Label>
+            <Input
+              type="text"
+              name="trip_location"
+              onChange={this.handleChange}
+              value={this.state.form.trip_location}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Trip date range</Label>
+            <Input
+              type="text"
+              name="trip_date_range"
+              onChange={this.handleChange}
+              value={this.state.form.trip_date_range}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="text-for-check">
+              Check to show your trip to everyone
+            </Label>
+            <Input
+              type="checkbox"
+              name="is_public"
+              checked={this.state.form.is_public}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <Button name="submit" color="secondary" onClick={this.handleSubmit}>
+            Add a New Trip
+          </Button>
+        </Form>
         {this.state.submitted && <Redirect to="/yourtrips" />}
       </div>
     );
