@@ -25,7 +25,7 @@ export default class YelpSearch extends Component {
     this.setState({ submitted: true });
   };
   render() {
-    const { sightSearch, businesses, handleSetNewSight} = this.props;
+    const { sightSearch, businesses } = this.props;
     return (
       <div className="yelp-search-container form-container ">
         <h1>Search For Sights Near You</h1>
@@ -65,7 +65,7 @@ export default class YelpSearch extends Component {
             Search
           </Button>
         </Form>
-        {businesses && <YelpBusinesses businesses={businesses} handleSetNewSight={handleSetNewSight}/>}
+        {businesses && <YelpBusinesses businesses={businesses} />}
         {this.state.submitted && (
           <Redirect to={`/trips/${this.props.trip.id}`} />
         )}
