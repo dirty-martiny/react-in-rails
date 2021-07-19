@@ -33,7 +33,6 @@ export default class TripNew extends Component {
     return (
       <div className="form-container">
         <h1>Add a Trip</h1>
-        <Card>
           <Form>
             <FormGroup>
               <Label>Trip Name</Label>
@@ -44,6 +43,7 @@ export default class TripNew extends Component {
                 value={this.state.form.trip_name}
               />
             </FormGroup>
+            <br/>
             <FormGroup>
               <Label>Trip Location</Label>
               <Input
@@ -53,6 +53,7 @@ export default class TripNew extends Component {
                 value={this.state.form.trip_location}
               />
             </FormGroup>
+            <br/>
             <FormGroup>
               <Label>Trip date range</Label>
               <Input
@@ -62,8 +63,9 @@ export default class TripNew extends Component {
                 value={this.state.form.trip_date_range}
               />
             </FormGroup>
+            <br/>
             <FormGroup>
-              <Label className="text-for-check">Is public</Label>
+              <Label className="text-for-check">Check to show your trip to friends</Label>
               <Input
                 type="checkbox"
                 name="is_public"
@@ -71,12 +73,11 @@ export default class TripNew extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
-
+            <br/>
             <Button name="submit" color="secondary" onClick={this.handleSubmit}>
               Add a New Trip
             </Button>
           </Form>
-        </Card>
         {this.state.submitted && <Redirect to="/yourtrips" />}
       </div>
     );

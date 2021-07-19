@@ -30,8 +30,7 @@ export class TripEdit extends Component {
   render() {
     return (
       <div className="form-container">
-        <h1>Trip Edit Page</h1>
-        <Card>
+        <h1>Edit Your Trip</h1>
           <Form>
             <FormGroup>
               <Label>Trip's Name</Label>
@@ -65,7 +64,7 @@ export class TripEdit extends Component {
             <br />
             <FormGroup>
               <Label className="text-for-check">
-                Check here to show your trip to friends
+                Check to show your trip to friends
               </Label>
               <Input
                 type="checkbox"
@@ -79,7 +78,6 @@ export class TripEdit extends Component {
               Update Trip
             </Button>
           </Form>
-        </Card>
         {this.state.submitted && <Redirect to="/yourtrips" />}
       </div>
     );
