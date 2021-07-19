@@ -313,4 +313,6 @@ Devise.setup do |config|
   # and replace it with this:
   config.sign_out_via = :get
 
+  config.secret_key = '22ae631d97b487e478c49474e3df273e'
+
 end
