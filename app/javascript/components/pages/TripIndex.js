@@ -1,26 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 
 export default class TripIndex extends Component {
   render() {
     const { trips } = this.props;
-    let publicTrips = trips.filter((trip) => {
-      return trip.is_public;
-    });
+    let publicTrips =
+      trips &&
+      trips.filter((trip) => {
+        return trip.is_public;
+      });
     return (
-      <div>
-        <h1>TripIndex</h1>
-        {trips &&
-          publicTrips.map((trip) => {
-            return (
-              <div key={trip.id}>
-                <h2>{trip.trip_name}</h2>
-                <p>{trip.trip_location}</p>
-
-                <Link to={`/trips/${trip.id}`}>More Details</Link>
-              </div>
-            );
-          })}
+      <div className="main-card-container trip-index-container">
+        <Row>
+          {trips &&
+            publicTrips.map((trip) => {
+              return (
+                <Col sm="3" key={trip.id}>
+                  <Card body>
+                    <CardTitle tag="h5">{trip.trip_name}</CardTitle>
+                    <CardText>{trip.trip_location}</CardText>
+                    <Link to={`/trips/${trip.id}`}>
+                      <Button>More Details</Button>
+                    </Link>
+                  </Card>
+                </Col>
+              );
+            })}
+        </Row>
       </div>
     );
   }

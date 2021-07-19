@@ -33,8 +33,8 @@ export class SightEdit extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Sight Edit Page</h1>
+      <div className="sight-edit-container form-container ">
+        <h1>Edit Your Sight</h1>
         <Form>
           <FormGroup>
             <Label for="name">Sight's Name</Label>
@@ -45,7 +45,6 @@ export class SightEdit extends Component {
               value={this.state.form.name}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="address1">Sight's Street Address</Label>
             <Input
@@ -55,7 +54,6 @@ export class SightEdit extends Component {
               value={this.state.form.address1}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="city">Sight's City</Label>
             <Input
@@ -65,7 +63,6 @@ export class SightEdit extends Component {
               value={this.state.form.city}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="zip_code">Sight's Zipcode</Label>
             <Input
@@ -75,7 +72,6 @@ export class SightEdit extends Component {
               value={this.state.form.zip_code}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="state">Sight's State</Label>
             <Input
@@ -85,7 +81,6 @@ export class SightEdit extends Component {
               value={this.state.form.state}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="country">Sight's Country</Label>
             <Input
@@ -95,7 +90,6 @@ export class SightEdit extends Component {
               value={this.state.form.country}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="phone">Sight's Phone</Label>
             <Input
@@ -105,12 +99,7 @@ export class SightEdit extends Component {
               value={this.state.form.phone}
             />
           </FormGroup>
-          <br />
-          <Button
-            className="button-style"
-            name="submit"
-            onClick={this.handleSubmit}
-          >
+          <Button name="submit" onClick={this.handleSubmit}>
             Edit Sight
           </Button>
         </Form>

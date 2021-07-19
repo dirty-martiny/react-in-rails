@@ -18,8 +18,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: false,
-      businesses: false,
+      trips: null,
+      businesses: null,
     };
   }
 
@@ -27,7 +27,7 @@ class App extends React.Component {
     this.indexTrips();
   }
 
-  yelpApi = (item, location) => {
+  sightSearch = (item, location) => {
     const data = { item: item, location: location };
     fetch("/search", {
       body: JSON.stringify(data),
@@ -190,7 +190,7 @@ class App extends React.Component {
       sign_in_route,
       sign_out_route,
     } = this.props;
-    console.log("businesses", this.state.businesses);
+
     return (
       <React.Fragment>
         <Router>
@@ -267,7 +267,7 @@ class App extends React.Component {
                     <CreateSight
                       createSight={this.createSight}
                       trip={trip}
-                      yelpApi={this.yelpApi}
+                      sightSearch={this.sightSearch}
                       businesses={this.state.businesses}
                     />
                   );

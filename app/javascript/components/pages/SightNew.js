@@ -33,11 +33,11 @@ export class SightNew extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Sight New Page</h1>
+      <div className="form-container sight-new-containter">
+        <h1>Add A New Sight</h1>
         <Form>
           <FormGroup>
-            <Label for="name">Sight's Name</Label>
+            <Label for="name">Name of Sight</Label>
             <Input
               type="text"
               name="name"
@@ -45,9 +45,8 @@ export class SightNew extends Component {
               value={this.state.form.name}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="address1">Sight's Street Address</Label>
+            <Label for="address1">Street Address</Label>
             <Input
               type="text"
               name="address1"
@@ -55,9 +54,8 @@ export class SightNew extends Component {
               value={this.state.form.address1}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="city">Sight's City</Label>
+            <Label for="city">City</Label>
             <Input
               type="text"
               name="city"
@@ -65,9 +63,8 @@ export class SightNew extends Component {
               value={this.state.form.city}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="zip_code">Sight's Zipcode</Label>
+            <Label for="zip_code">Zipcode</Label>
             <Input
               type="text"
               name="zip_code"
@@ -75,9 +72,8 @@ export class SightNew extends Component {
               value={this.state.form.zip_code}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="state">Sight's State</Label>
+            <Label for="state">State</Label>
             <Input
               type="text"
               name="state"
@@ -85,9 +81,8 @@ export class SightNew extends Component {
               value={this.state.form.state}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="country">Sight's Country</Label>
+            <Label for="country">Country</Label>
             <Input
               type="text"
               name="country"
@@ -95,9 +90,8 @@ export class SightNew extends Component {
               value={this.state.form.country}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label for="phone">Sight's Phone</Label>
+            <Label for="phone">Phone Number</Label>
             <Input
               type="text"
               name="phone"
@@ -105,12 +99,7 @@ export class SightNew extends Component {
               value={this.state.form.phone}
             />
           </FormGroup>
-          <br />
-          <Button
-            className="button-style"
-            name="submit"
-            onClick={this.handleSubmit}
-          >
+          <Button name="submit" onClick={this.handleSubmit}>
             Add To Trip
           </Button>
         </Form>

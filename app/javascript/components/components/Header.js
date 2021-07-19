@@ -1,30 +1,81 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
   render() {
     const { sign_out_route, sign_in_route, new_user_route, logged_in } =
       this.props;
     return (
-      <div>
-        <Link to="/">Travel More</Link>
-        {!logged_in && (
-          <div>
-            <Link to="/tripsindex">Trips</Link>
-            <Link to="/about">About Us</Link>
-            <a href={sign_in_route}>Sign In</a>
-            <a href={new_user_route}>Sign Up</a>
-          </div>
-        )}
-        {logged_in && (
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/yourtrips">Your Trips</Link>
-            <Link to="/newtrip">New Trip</Link>
-            <Link to="/about">About Us</Link>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        )}
+      <div className="header-container">
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Travel More</NavbarBrand>
+          {this.state.isOpen ? (
+              <i onClick={this.toggle} className="fas fa-times"/>
+          ) : (
+            <NavbarToggler onClick={this.toggle} />
+          )}
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              {!logged_in && (
+                <>
+                  <NavItem>
+                    <Link to="/tripsindex" className="nav-link">
+                      Trips
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/about" className="nav-link">
+                      About Us
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href={sign_in_route}>Sign In</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href={new_user_route}>Sign Up</NavLink>
+                  </NavItem>
+                </>
+              )}
+              {logged_in && (
+                <>
+                  <NavItem>
+                    <Link to="/">Home</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/yourtrips">Your Trips</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/newtrip">New Trip</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link to="/about">About Us</Link>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href={sign_out_route}>Sign Out</NavLink>
+                  </NavItem>
+                </>
+              )}
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }

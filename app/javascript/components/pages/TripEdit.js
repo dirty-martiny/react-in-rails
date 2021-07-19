@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label, Card } from "reactstrap";
 import { Redirect } from "react-router-dom";
 
 export class TripEdit extends Component {
@@ -29,8 +29,8 @@ export class TripEdit extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Trip Edit Page</h1>
+      <div className="form-container">
+        <h1>Edit Your Trip</h1>
         <Form>
           <FormGroup>
             <Label>Trip's Name</Label>
@@ -61,9 +61,10 @@ export class TripEdit extends Component {
               value={this.state.form.trip_date_range}
             />
           </FormGroup>
-          <br />
           <FormGroup>
-            <Label>Check here to show your trip to friends</Label>
+            <Label className="text-for-check">
+              Check to show your trip to everyone
+            </Label>
             <Input
               type="checkbox"
               name="is_public"
@@ -71,12 +72,11 @@ export class TripEdit extends Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <br />
           <Button name="submit" color="secondary" onClick={this.handleSubmit}>
             Update Trip
           </Button>
         </Form>
-        {this.state.submitted && <Redirect to="/tripsindex" />}
+        {this.state.submitted && <Redirect to="/yourtrips" />}
       </div>
     );
   }

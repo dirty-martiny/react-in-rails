@@ -12,9 +12,102 @@
  *
  *= require_tree .
  *= require_self
+ Hex code: #FFCCE7, #DAF2DC, #81B7D2, #4D5198
+
+Nav - header - #DAF2DC
+#4D5198 - text
+#FFCCE7 - button --- button:hover - #DAF2DC
  */
+
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $blue-purple;
+}
 
 @import "bootstrap";
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header;
+}
 
+.form-container {
+  width: 50%;
+  text-align: center;
+  color: $blue-purple;
+  margin: 0 auto;
 
+  .form-control,
+  .form-control:focus {
+    color: $blue-purple;
+    text-align: center;
+  }
+
+  .btn {
+    background-color: $pink;
+    color: $blue-purple;
+    border: none;
+  }
+
+  .btn:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
+}
+
+.main-card-container {
+  text-align: center;
+  padding: 3% 0;
+  color: $blue-purple;
+
+  .card,
+  .card-body {
+    border-color: $border-color;
+  }
+
+  .card {
+    display: block;
+    padding: 3%;
+    margin: 3%;
+    box-shadow: 2px 2px 10px $light-blue;
+  }
+
+  .card-subtitle {
+    font-family: cursive;
+  }
+
+  .btn {
+    background-color: $pink;
+    color: $blue-purple;
+    border: none;
+  }
+
+  .btn:hover {
+    background-color: $green;
+    color: $blue-purple;
+  }
+}
+
+i {
+  color: $blue-purple;
+  font-size: 2rem;
+  margin: 0 3%;
+}
+
+i:hover {
+  cursor: pointer;
+  font-size: 2.3rem;
+}
+
+button,
+input {
+  margin: 2% 0;
+}

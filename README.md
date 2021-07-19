@@ -22,9 +22,9 @@ Travel is web application for people who like to travel and share their travels 
 ### Set Up
 
 - clone the repo
-- run bundle and yarn
-- create database with commands rails db:create - rails db:migrate - rails db:seed
-- run rails s to run the server
+- run `bundle` and `yarn`
+- create database with commands `rails db:create` - `rails db:migrate` - `rails db:seed`
+- run `rails s` to run the server
 
 ### Dream List
 
