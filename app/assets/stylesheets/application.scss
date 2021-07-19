@@ -18,14 +18,17 @@ Nav - header - #DAF2DC
 #4D5198 - text
 #FFCCE7 - button --- button:hover - #DAF2DC
  */
+
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: $blue-purple;
 }
 
 @import "bootstrap";
-@import "variables";
 
 h1,
 h2,
