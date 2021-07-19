@@ -28,4 +28,12 @@ Travel is web application for people who like to travel and share their travels 
 
 ### Dream List
 
+- Responsive Design (include a phone view for example)
+- Style Devise forms
 - Allows users to add pictures to their sight
+- Allow the user to select searched sights with a checkbox
+- User can select multiple sights
+- User can save a favorite a trip and see a list of favorite
+  trips
+- User can save a favorite a sight and see a list of favorite
+  sights
