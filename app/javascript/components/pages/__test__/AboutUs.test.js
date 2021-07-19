@@ -15,18 +15,18 @@ describe("When AboutUs renders", () => {
   });
 
   it("displays three cardtitles", () => {
-    const aboutUs = shallow(<AboutUs/>);
+    const aboutUs = shallow(<AboutUs />);
 
     const aboutUsCardTitle = aboutUs.find("h5");
 
     expect(aboutUsCardTitle.length).toEqual(3);
-  })
+  });
 
   it("displays three cardtexts", () => {
-    const aboutUs = shallow(<AboutUs/>);
+    const aboutUs = shallow(<AboutUs />);
 
     const aboutUsCardText = aboutUs.find("CardText");
 
-    expect(aboutUsCardText.length).toEqual(3);
-  })
+    expect(aboutUsCardText.length).toEqual(6);
+  });
 });
