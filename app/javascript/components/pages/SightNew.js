@@ -45,7 +45,6 @@ export class SightNew extends Component {
               value={this.state.form.name}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="address1">Street Address</Label>
             <Input
@@ -55,7 +54,6 @@ export class SightNew extends Component {
               value={this.state.form.address1}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="city">City</Label>
             <Input
@@ -65,7 +63,6 @@ export class SightNew extends Component {
               value={this.state.form.city}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="zip_code">Zipcode</Label>
             <Input
@@ -75,7 +72,6 @@ export class SightNew extends Component {
               value={this.state.form.zip_code}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="state">State</Label>
             <Input
@@ -85,7 +81,6 @@ export class SightNew extends Component {
               value={this.state.form.state}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="country">Country</Label>
             <Input
@@ -95,7 +90,6 @@ export class SightNew extends Component {
               value={this.state.form.country}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="phone">Phone Number</Label>
             <Input
@@ -105,7 +99,6 @@ export class SightNew extends Component {
               value={this.state.form.phone}
             />
           </FormGroup>
-          <br />
           <Button name="submit" onClick={this.handleSubmit}>
             Add To Trip
           </Button>

@@ -42,7 +42,6 @@ export default class YelpSearch extends Component {
               value={this.state.form.item}
             />
           </FormGroup>
-          <br />
           <FormGroup>
             <Label for="location">
               Location:{" "}
@@ -55,7 +54,6 @@ export default class YelpSearch extends Component {
               value={this.state.form.location}
             />
           </FormGroup>
-          <br />
           <Button
             name="submit"
             onClick={() => {
