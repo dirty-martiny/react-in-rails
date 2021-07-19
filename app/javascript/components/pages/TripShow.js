@@ -18,7 +18,6 @@ export default class TripShow extends Component {
     const { trip, logged_in, user } = this.props;
     return (
       <div className="main-card-container trip-show-container">
-        <h1>Trip Show</h1>
         {trip && (
           <>
             <div className="ts-info">

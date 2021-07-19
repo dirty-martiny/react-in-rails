@@ -12,7 +12,6 @@ export default class TripIndex extends Component {
       });
     return (
       <div className="main-card-container trip-index-container">
-        <h1>TripIndex</h1>
         <Row>
           {trips &&
             publicTrips.map((trip) => {
