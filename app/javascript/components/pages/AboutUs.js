@@ -153,6 +153,8 @@ export default class AboutUs extends Component {
               <div className="dream-list">
                 <h5>Dream List:</h5>
                 <ul className="ul-dream-list">
+                  <li>Responsive Design (include a phone view for example)</li>
+                  <li>Style Devise forms</li>
                   <li>Allows users to add pictures to their sight</li>
                   <li>
                     Allow the user to select searched sight with a checkbox
