@@ -26,8 +26,11 @@ Travel is web application for people who like to travel and share their travels 
 - create database with commands `rails db:create` - `rails db:migrate` - `rails db:seed`
 - run `rails s` to run the server
 
-### Dream List
+## The app url 
+ This is the app link **[Travel More](https://still-waters-56980.herokuapp.com/)**
 
+
+### Dream List
 - Responsive Design (include a phone view for example)
 - Style Devise forms
 - Allows users to add pictures to their sight
