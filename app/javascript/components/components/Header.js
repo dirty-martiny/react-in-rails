@@ -27,11 +27,7 @@ export default class Header extends Component {
       <div className="header-container">
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Travel More</NavbarBrand>
-          {this.state.isOpen ? (
-              <i onClick={this.toggle} className="fas fa-times"/>
-          ) : (
-            <NavbarToggler onClick={this.toggle} />
-          )}
+          <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar>
               {!logged_in && (
